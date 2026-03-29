@@ -262,8 +262,7 @@
 
   <div class="sidebar-part">Part 7 — Changelog</div>
   <div class="sidebar-section">
-    <a href="#changelog-v4" class="sidebar-link">v4.0 Structural Changes</a>
-    <a href="#changelog-v31" class="sidebar-link">v3.1 Changes from v2.1</a>
+    <a href="#changelog-v4" class="sidebar-link">What Changed from Your Docs</a>
   </div>
 </nav>
 
@@ -1288,124 +1287,271 @@
   <div class="part-divider" id="part7">
     <span class="part-num">Part 7</span>
     <h2>Changelog</h2>
-    <span class="part-sub">v4.0 structural changes + full v3.1 audit trail</span>
+    <span class="part-sub">Dan's original docs → v4.0</span>
   </div>
 
-  <!-- v4.0 CHANGELOG -->
   <div class="section" id="changelog-v4">
-    <div class="section-header"><h2>v4.0 Structural Changes</h2></div>
-    <p>v4.0 is a full restructure of the v3.1 doc into the OS Agent Template format — Charter, Skillsets, Playbook, Key Principles, Infra Template. All content from v3.1 is preserved; nothing was removed. This section documents what moved where for Dan's reference.</p>
+    <div class="section-header"><h2>What Changed from Your Original Docs</h2></div>
+    <p>This changelog compares v4.0 directly against Dan's four original documents: <em>AITM Requirements Brief Guide v1, CCA AITM Requirements Brief v3, Process Map Guide v1,</em> and <em>Prototype Brief Guide v1</em>. Every change is documented with what you had, what changed, and why. Nothing from your original docs was removed — all content was either preserved as-is, refined, or elevated into a new structure.</p>
 
-    <div class="callout"><strong>All 24 changelog decisions from v3.1 survive the restructure.</strong> Every change Dan reviewed and approved remains in force — they're now in the correct OS section rather than a flat playbook format.</div>
+    <div class="callout"><strong>How to read this:</strong> "In your docs" = what Dan's original documents said. "In v4.0" = what this document says. "Rationale" = why the change was made or confirmed.</div>
 
-    <h4>What Moved Where</h4>
-    <div class="table-wrap"><table><thead><tr><th>v3.1 Section</th><th>v4.0 Home</th><th>Notes</th></tr></thead><tbody>
-      <tr><td>About This Playbook + Why This Exists</td><td>1.2 Mission + Part 4 Key Principles</td><td>Mission paragraph consolidated; design principles elevated to Part 4</td></tr>
-      <tr><td>Role Guide + Core Definitions</td><td>Preamble (before Part 1)</td><td>Kept prominent — must be read before Charter</td></tr>
-      <tr><td>Complete Skill Inventory</td><td>1.3 Skill Inventory</td><td>Moved to Charter; all 4 Responsibilities now shown</td></tr>
-      <tr><td>Decision Authority</td><td>1.4 Decision Authority Matrix</td><td>Renamed to match OS; urgency column (Now/Soon/FYI) added</td></tr>
-      <tr><td>Behavioral Rules & Design Principles</td><td>1.5 Behavioral Rules + Part 4</td><td>Rules stay in Charter; 7 design principles elevated to Part 4</td></tr>
-      <tr><td>Build Handoff Contract</td><td>1.6 Handoff Contracts</td><td>Charter-level — even more prominent than before</td></tr>
-      <tr><td>Skillset Learning Loop</td><td>1.7 Learning Loop</td><td>Charter-level; entry template and cadence preserved verbatim</td></tr>
-      <tr><td>Customer Dossier</td><td>2.2 Customer Dossier skillset</td><td>Promoted from Agent Config to its own Skillset — Responsibility 2</td></tr>
-      <tr><td>3 Entry Triggers + Feasibility Gate + Opportunity Themes</td><td>3.1 Trigger Conditions</td><td>All three merged into one section; content unchanged</td></tr>
-      <tr><td>4 Stages + Alignment Loop + Clarity Tools + Listening & Capture + Confidence Scoring + Gap ID</td><td>3.2 Execution Logic</td><td>All merged; CCA mechanics now sub-sections of Execution Logic</td></tr>
-      <tr><td>All Output sections (Brief Structure, Prototype Brief, Process Map, AITM Brief, Training Guide)</td><td>3.4 Output Templates</td><td>Reordered chronologically; Brief Structure + AITM Brief merged into one</td></tr>
-      <tr><td>Scope Freeze</td><td>3.5 Scope Freeze (Quality Gate)</td><td>Primary label kept as "Scope Freeze"; OS name in subtitle. Kill Conditions preserved as standalone subsection.</td></tr>
-    </tbody></table></div>
+    <h3 style="margin:1.5rem 0 .75rem;color:var(--navy)">Document structure</h3>
 
-    <h4>New Sections in v4.0</h4>
-    <div class="table-wrap"><table><thead><tr><th>New Section</th><th>Status</th><th>Owner</th></tr></thead><tbody>
-      <tr><td>1.1 Identity (Agent ID, M365 identity, version)</td><td><span class="badge badge-new">Populated</span></td><td>Dave</td></tr>
-      <tr><td>1.8 Remote™ Surface Map</td><td><span class="badge badge-stub">Stub</span></td><td>Brian</td></tr>
-      <tr><td>1.9 Operational Profile</td><td><span class="badge badge-stub">Partial</span></td><td>Jacob/Brian</td></tr>
-      <tr><td>2.1 Solution Alignment — Skillset Definition fields</td><td><span class="badge badge-new">Populated</span></td><td>Dave/Dan</td></tr>
-      <tr><td>2.2 Customer Dossier stub</td><td><span class="badge badge-stub">Stub — Next Build</span></td><td>Dan</td></tr>
-      <tr><td>2.3 Land & Expand stub</td><td><span class="badge badge-stub">Stub — Next Build</span></td><td>Dan</td></tr>
-      <tr><td>2.4 Adoption Monitoring stub</td><td><span class="badge badge-stub">Stub — Future</span></td><td>Dan</td></tr>
-      <tr><td>3.3 Decision Trees</td><td><span class="badge badge-stub">Stub</span></td><td>Brian</td></tr>
-      <tr><td>3.6 Failure Modes & Fallback</td><td><span class="badge badge-stub">Stub</span></td><td>Brian</td></tr>
-      <tr><td>3.7 Cost Profile</td><td><span class="badge badge-stub">Stub</span></td><td>Jacob/Brian</td></tr>
-      <tr><td>3.8 Observability</td><td><span class="badge badge-stub">Stub</span></td><td>Brian/Jacob</td></tr>
-      <tr><td>Part 4: Key Principles</td><td><span class="badge badge-new">Populated</span></td><td>Dave</td></tr>
-      <tr><td>Part 5: Infra Template</td><td><span class="badge badge-new">Mostly populated</span></td><td>Jacob (TBD fields)</td></tr>
-    </tbody></table></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">Flat playbook → OS Agent Template format</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your docs were structured as a single flat playbook: Overview → Triggers → How It Works → Outputs → Agent Config → Reference.</div>
+        <div class="rationale">v4.0 restructures into the ManageAI OS Agent Template format: Charter (identity, mission, skills, authority, rules, contracts, learning loop) → Skillsets (all 4 CCA responsibilities) → Playbook (execution logic for Solution Alignment) → Key Principles → Infra Template → Reference → Changelog. All your content is preserved — it's been relocated into the correct OS section. The Charter is now upfront so Brian and Jacob see the full agent definition before any process detail.</div>
+      </div>
+    </div>
 
-    <p style="font-size:13px;color:var(--gray-500);margin-top:1rem"><strong>v4.0 summary:</strong> Full restructure into OS format. 24/24 v3.1 decisions preserved. 13 new sections added (7 stubs needing Brian/Jacob input). 0 content lost. Dan's v3.1 changelog preserved in full below.<br>
-    <strong>Note on new content introduced in v4.0:</strong> Two categories of content are new and were not derived from Dan's original docs or our audit decisions — (1) Agent ID format (CUST-001, CUST-001-SK-001) and Skillset ID numbering — these are OS template identifiers assigned by Dave to conform to the OS schema; and (2) the full Infra Template (Part 5) — populated from ManageAI's own Middleweight AWS stack definition from the OS, not from Dan's docs which did not include infrastructure specs. Both additions are correct and intentional.<br>
-    Changes prepared by Dave Albertson (CEO), March 2026.</p>
-  </div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">7-section Brief — reordered and renamed</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your AITM Requirements Brief Guide defined sections in this order: (1) AI Vision, (2) Role & Responsibilities, (3) Current Reality & Process, (4) What the AITM Does, (5) Knowledge & Data, (6) [AITM Name] Workflow, (7) How We Know It's Ready.</div>
+        <div class="rationale">Sections reordered to tell a cleaner narrative: WHY → WHO → TODAY → TOMORROW → HOW → WITH WHAT → PROOF. This means a reader experiences the strategic context before the operational detail, and sees the current-state process immediately before the future-state workflow — the before/after contrast is immediate. Key renames: "AI Vision" → "AI Workforce Vision" (connects to ManageAI positioning); "Knowledge & Data" → "Knowledge & Systems" (covers integrations, identity, access, and compliance — not just data); "What the AITM Does" → "What [Name] Does" and "AITM Workflow" → "[Name]'s Workflow" (personalized to the actual Teammate name); "How We Know It's Ready" → "How We Know It's Working" (covers both pre-launch criteria and ongoing metrics, not just launch readiness).</div>
+      </div>
+    </div>
 
-  <!-- v3.1 CHANGELOG (PRESERVED VERBATIM) -->
-  <div class="section" id="changelog-v31">
-    <div class="section-header"><h2>v3.1 Changes from v2.1</h2></div>
-    <p>This changelog documents every material change from v2.1 to v3.1 with rationale. Prepared for Dan Ray following a structured audit of the v2.1 spec against the original v2.1 playbook and ManageAI's operating model.</p>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Preserved</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">Business Requirements Scope Freeze — kept as written</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your docs defined Business Requirements Scope Freeze with Confidence Scoring (Complete/Partial/Missing) and a hard rule: the Build team must be able to begin without asking clarifying questions.</div>
+        <div class="rationale">Preserved exactly as written. In v4.0 it lives in Part 3 (3.5 Scope Freeze) with the OS subtitle "Quality Gate" — but the primary label, the hard rule, the confidence scoring levels, and the kill conditions are all unchanged. Nothing was softened.</div>
+      </div>
+    </div>
 
-    <h3 style="margin:1.25rem 0 .75rem;color:var(--navy)">Structure</h3>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">Build Handoff Contract — elevated, not buried</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your AITM Requirements Brief Guide embedded the "Must Never Ask For" concept inside the guide narrative rather than as a standalone contract artifact.</div>
+        <div class="rationale">The Build Handoff Contract is now a first-class Charter artifact (1.6 Handoff Contracts) — not inside a guide. "Must Never Ask For" list with explicit mapping to Brief sections, "May Ask For" list for Jacob, and hard enforcement (scope reopens if violated) are all preserved verbatim. Elevating it to Charter level makes it impossible to miss. If Brian has to ask Dan for anything on the list, the Brief failed.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">S1 — Modified</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">7-section Brief — reordered and renamed</strong></div><div class="changelog-body"><div class="orig">v2.1 had 7 sections in a different order: AI Vision → Role & Responsibilities → Current Reality → What the AITM Does → Knowledge & Data → AITM Workflow → How We Know It's Ready.</div><div class="rationale">Sections reordered for narrative clarity: WHY → WHO → TODAY → TOMORROW → HOW → WITH WHAT → PROOF. Key renames: "AI Vision" → "AI Workforce Vision"; "Knowledge & Data" → "Knowledge & Systems"; "What the AITM Does" → "What [Name] Does"; "AITM Workflow" → "[Name]'s Workflow"; "How We Know It's Ready" → "How We Know It's Working." Dan's section names are the primary language — OS template references are background team knowledge, not added to the document.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified (reinstated)</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">Skillset Learning Loop — explicit and prominent</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your CCA AITM Requirements Brief v3 implied the CCA would learn and improve over time as part of its ongoing responsibilities, but did not formally define the mechanism — no entry template, no review cadence, no versioning trigger.</div>
+        <div class="rationale">The Skillset Learning Loop is now a first-class Charter section (1.7 Learning Loop) with a formal Skillset Improvement Entry template, explicit trigger events (prototype miss, build handoff violation), pattern flagging when the same root cause appears across 2+ engagements, and a Dave + Dan monthly review cadence. This is how the process gets smarter with every engagement. Without it we repeat the same mistakes with no systematic improvement path.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">S2 — In, no changes</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">Business Requirements Scope Freeze preserved</strong></div><div class="changelog-body"><div class="rationale">"Scope Freeze" is cleaner language than "Readiness Check." Confidence Scoring (Complete/Partial/Missing) and hard rule maintained. Accepted as written.</div></div></div>
+    <h3 style="margin:1.5rem 0 .75rem;color:var(--navy)">Terminology</h3>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">S3 — Modified</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">Build Handoff Contract reinstated as first-class artifact</strong></div><div class="changelog-body"><div class="orig">v2.1 embedded the "Must Never Ask For" concept inside the Brief guide rather than keeping it as a standalone artifact.</div><div class="rationale">The Build Handoff Contract is too important to be buried in a guide. Reinstated as a standalone, prominently placed artifact. "Must Never Ask For" list with explicit mapping to Brief sections, "May Ask For" list for Jacob, and hard enforcement (scope reopens if violated) are all preserved.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">"AITM" → terminology hierarchy with "AI Teammate" primary</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your docs used "AITM" as the standard term throughout all materials — customer-facing and internal.</div>
+        <div class="rationale">A clear three-tier hierarchy is established: "AI Teammate" is the primary customer-facing term — warm, intuitive, fits the workforce model, no acronym required. "Agent" is acceptable in market contexts where it's the natural industry term — the market is converging on this and fighting it creates friction. "AITM" is internal shorthand only — used in guides, briefs, and tooling, never led with in customer-facing materials. This doesn't change your content, it changes how we introduce the concepts to customers.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">S4 — In, no changes</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">Decision Authority table preserved</strong></div><div class="changelog-body"><div class="rationale">Decision Authority table preserved as written. Autonomous decisions, escalation paths, response expectations, and Never rows all intact. Accepted as written.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">Definitions hierarchy — structure preserved, definitions made precise</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your docs introduced Objective → Responsibility → Skillset → Training as a four-tier hierarchy but left the definitions at a summary level without explicit anchors for each tier's purpose.</div>
+        <div class="rationale">Your four-tier structure is correct and fully maintained. Each tier now has a precise one-sentence definition with an explicit anchor: Business Objective = WHY, Responsibility = WHAT (outcomes + named human owner + Remote governance plan), Skillset = HOW (major workflow capability), Training = DEPLOY (full scope of all changes — agent config, infra, prompts, connections, APIs). Training in particular was broadened: it's not narrowly defined as knowledge updates or isolated component changes — it covers everything required to change how the AITM functions, including infrastructure changes.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">S5 — Modified (reinstated)</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">Skillset Learning Loop reinstated explicitly</strong></div><div class="changelog-body"><div class="orig">v2.1 did not carry the Skillset Learning Loop forward. It was implied in the CCA's ongoing responsibilities but not formally defined.</div><div class="rationale">This is one of the most important mechanisms in the entire system and must be explicit, formal, and prominent — not implied. It is how the process gets smarter with every engagement. Without it we repeat the same mistakes across customers with no systematic improvement path. The formal Skillset Improvement Entry template, pattern flagging (same root cause across 2+ engagements escalates priority), Dave + Dan monthly review cadence, and playbook versioning are all reinstated verbatim.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Preserved</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">AITM Requirements Brief (WHAT) + Skillset Training Guide (HOW) split — kept as written</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your AITM Requirements Brief Guide defined the Brief as capturing the WHAT and WHY (business requirements), with Brian's engineering team creating the Skillset Training Guide (the HOW) separately.</div>
+        <div class="rationale">This separation is the right architectural decision and is preserved exactly as you defined it. The Brief remains the business requirements document readable by Dan, customers, and Sales. Brian's Skillset Training Guide is the engineering translation layer. One open gap noted: the Skillset Training Guide still needs its own guide document — same treatment as your Process Map Guide and Prototype Brief Guide.</div>
+      </div>
+    </div>
 
-    <h3 style="margin:1.25rem 0 .75rem;color:var(--navy)">Philosophy</h3>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">Opportunity Theme taxonomy — internal operating logic only</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your CCA Brief surfaced the Theme → Opportunity → Signal taxonomy as part of the visible engagement process with customers.</div>
+        <div class="rationale">The three-tier taxonomy and Priority Score scoring are preserved in full as the CCA's internal operating logic — they're strong IP that compounds in value across engagements. But the taxonomy is never surfaced directly to customers in early engagements (customers 0–17). Customers see an Outcome Roadmap in plain language. The CCA operates the taxonomy behind the scenes. As engagement volume grows, the data creates pattern intelligence across customers.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">Ph1 — Modified</span><span style="font-size:11px;color:var(--gray-600)">Philosophy</span><strong style="font-size:12px">7th design principle added — outputs are non-negotiable</strong></div><div class="changelog-body"><div class="orig">v2.1 had 6 design principles where principles override guidelines — encouraging conversational judgment throughout.</div><div class="rationale">Dan's 6 principles are preserved and correct — they prevent the CCA from becoming robotic. A seventh principle is added: "Outputs are non-negotiable. The conversation is flexible. The Brief, Process Map, Prototype Brief, and Build Handoff Contract are not. No output leaves without meeting its completeness standard." This principle overrides all others when an output is at stake.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">Team naming — aligned to OS as master reference</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your docs used "Brian's engineering team" and "engineering team" to reference the build function.</div>
+        <div class="rationale">"Engineering team" is replaced throughout with the correct OS role references: Build team (Brian) and Architecture team (Jacob). The OS is the master source of truth for all team names and definitions — as the OS evolves, this document follows. This also makes handoffs more precise: Brian receives the Brief and produces the Skillset Training Guide; Jacob handles infrastructure, API authentication, and deployment.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">Ph2 — In, no changes</span><span style="font-size:11px;color:var(--gray-600)">Philosophy</span><strong style="font-size:12px">Customer language enforcement elevated</strong></div><div class="changelog-body"><div class="rationale">Customer language enforcement elevated to a core design principle with the Bambi example preserved verbatim. Concrete examples are worth more than abstract rules in a document the CCA operates from. Accepted as written.</div></div></div>
+    <h3 style="margin:1.5rem 0 .75rem;color:var(--navy)">Process</h3>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">Ph3 — Modified</span><span style="font-size:11px;color:var(--gray-600)">Philosophy</span><strong style="font-size:12px">Prototype philosophy — three purposes added explicitly</strong></div><div class="changelog-body"><div class="orig">v2.1 sharpened the prototype philosophy with "rough by design" and "built to validate, not to ship."</div><div class="rationale">Dan's sharpened language is preserved. A third purpose added explicitly: the prototype is a wow experience that creates genuine customer excitement and buy-in early in the engagement. All three purposes stated: (1) requirements discovery tool, (2) feasibility validator, (3) wow experience. The wow is not incidental — it is a design goal of the process.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">4 stages preserved — entry points made explicit per customer context</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your docs structured the process as 4 sequential stages (Feasibility Check → Roadmap & Vision → Process Map & Prototyping → Scope Completion & Handoff) and implicitly assumed every engagement starts at Stage 1.</div>
+        <div class="rationale">Your 4 stages are the right macro structure and are fully preserved. The modification is a clarification: not every engagement starts at Stage 1. A brand new customer starts at Stage 1 as defined. But an existing customer requesting a new AI Teammate already has a Dossier, a Roadmap, and an established relationship — they enter at Stage 2. When the Outcome Roadmap queues the next Teammate in sequence, the team picks up at Stage 3. Making the entry point explicit per context prevents unnecessary re-running of stages that are already complete.</div>
+      </div>
+    </div>
 
-    <h3 style="margin:1.25rem 0 .75rem;color:var(--navy)">Terminology</h3>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Preserved</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Feasibility Gate as Stage 1 with formal Feasibility Report — kept as written</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your docs elevated the Feasibility Gate to a full Stage 1 with a formal deliverable: Feasibility Report (Go / Blocker / Needs Info per Theme).</div>
+        <div class="rationale">Preserved exactly as written. This is the right call — a formal report creates a paper trail per Theme and means decisions are documented rather than lost in a Slack message. Same 5 questions, same gate rule. No changes.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">T1 — Modified</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">"Agent" → terminology hierarchy established</strong></div><div class="changelog-body"><div class="orig">v2.1 retired "agent" language entirely in favor of "AITM" across all materials.</div><div class="rationale">The market is converging on "agent" as the natural industry term. A clear hierarchy is established: "AI Teammate" is the primary customer-facing term. "Agent" is acceptable in market contexts where it is the natural term. "AITM" is internal shorthand only. Never lead with the acronym in customer-facing materials.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">AI Vision framing — Short/Medium/Long Term → Now/Next/Later</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your CCA Brief used Short Term / Medium Term / Long Term as the three-horizon framing for the AI Vision in every Requirements Brief.</div>
+        <div class="rationale">The three-bucket structure is valuable and is preserved — it communicates strategic clarity and company focus. The timing language is replaced. Now/Next/Later buckets are sequenced by dependency and readiness only — no dates, no quarters, no implied timelines anywhere in the Vision section. The pace of each phase is determined entirely by how fast the customer wants to move, not by a project schedule on ManageAI's side. This aligns with the workforce model: you hire the first Teammate, see what opens up, hire the next. Customers may add their own timing later if they choose.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">T2 — In (modified)</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">Definitions hierarchy formalized and made precise</strong></div><div class="changelog-body"><div class="orig">v2.1 introduced Objective → Responsibility → Skillset → Training but left definitions loose.</div><div class="rationale">Dan's four-tier structure is correct and maintained. Definitions made precise with explicit WHY/WHAT/HOW/DEPLOY anchors. Training definition broadened to cover the full scope of everything needed to make an AI Teammate perform — agent configuration, system prompt updates, knowledge base setup, tool connections, API integrations, and infrastructure template changes. This is not narrowly defined as knowledge vault updates or isolated component changes — Training means any and all updates required to change how the AITM functions, including infra changes.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Preserved</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Prototype Brief fires as early as first discovery call — kept as written</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your Prototype Brief Guide explicitly stated the Brief can be produced as early as after the first discovery call, using [UNKNOWN] for gaps not yet confirmed.</div>
+        <div class="rationale">Preserved exactly as written and elevated as a design principle in v4.0: the prototype is a requirements discovery tool, not a deliverable. Its job is to generate customer reaction. Getting Brian building something tangible early surfaces requirements that no mapping session alone can. [UNKNOWN] fields are acceptable and expected.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">T3 — In, no changes</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">AITM Requirements Brief + Skillset Training Guide separation</strong></div><div class="changelog-body"><div class="rationale">The WHAT/HOW split is the right architectural decision. Brief captures business requirements. Brian's team produces the Skillset Training Guide (HOW). Accepted as written.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Alignment Loop — reinstated as explicit iterative mechanic + prototype as default first move</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your docs described Stage 3 (Process Map & Prototyping) but did not explicitly call out the iterative cycling mechanic — the fact that the loop is designed to run 1–2 cycles and cycling is expected, not a sign something went wrong.</div>
+        <div class="rationale">The Alignment Loop is reinstated explicitly inside Stage 3 as an 8-step operating mechanic (map/prototype → gaps → readiness → brief → prototype → react → refine → confirm). Prototyping and process mapping are both clarity tools — the CCA recommends whichever moves the customer furthest fastest, with prototype as the preferred default opening move. One addition to your framing: the prototype is also a wow experience — a fast, tangible demo that creates genuine customer excitement and buy-in early. This is a design goal, not an accident.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">T4 — Modified</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">Opportunity Theme taxonomy — internal use only</strong></div><div class="changelog-body"><div class="orig">v2.1 surfaced Theme → Opportunity → Signal taxonomy as part of the customer engagement process.</div><div class="rationale">Three-tier taxonomy maintained in full as the CCA's internal operating logic. Never surfaced directly to customers in early engagements. Customers see an Outcome Roadmap in plain language. The structure compounds in value as engagement volume grows.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Preserved</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Customer Dossier — preserved, promoted to its own Skillset</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your CCA Brief defined the Customer Dossier schema under the CCA's Responsibility 2 (Maintain living source of truth per customer) with a detailed list of 12 elements.</div>
+        <div class="rationale">Preserved exactly as written — all 12 Dossier elements are in v4.0 (2.2 Customer Dossier skillset). Promoted from Agent Config to its own Skillset section because it's a distinct Responsibility with its own governance — not just an internal mechanic. The Dossier is the CCA's persistent memory per account and the foundation for Remote governance. Marked as Next Build since it's Responsibility 2.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">T5 — In, no changes</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">Engineering Handoff formalized as a named stage</strong></div><div class="changelog-body"><div class="rationale">Formalizing the handoff as a named discrete stage with a defined package protects Build team delivery velocity. "Engineering team" language replaced throughout with correct OS role references: Build team (Brian) and Architecture team (Jacob). The OS is the master source of truth for all team names.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Signal Synthesis — event-based surfacing + quarterly check-in backstop</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your CCA Brief specified quarterly cadence as the mechanism for surfacing new Opportunities.</div>
+        <div class="rationale">The Signal Synthesis skillset is confirmed. New Opportunities surface in real time as sessions reveal them — event-based, not calendar-based. The CCA flags signals to Dan immediately when a session reveals them. A quarterly check-in is preserved as a systematic backstop to ensure nothing has been missed and roadmap priorities are current. Both mechanisms work together — continuous event-based detection plus a scheduled minimum review.</div>
+      </div>
+    </div>
 
-    <h3 style="margin:1.25rem 0 .75rem;color:var(--navy)">Process</h3>
+    <h3 style="margin:1.5rem 0 .75rem;color:var(--navy)">Outputs</h3>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">P1 — Modified</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">4 stages + entry points clarified</strong></div><div class="changelog-body"><div class="orig">v2.1 structured the process as 4 sequential stages and assumed every engagement begins at Stage 1 — Feasibility Check.</div><div class="rationale">Dan's 4 stages are the right macro structure and are fully preserved. The modification is about recognizing that not every customer context starts at the beginning. A brand new engagement starts at Stage 1 as written. But an existing customer who requests a new AI Teammate doesn't need a full Feasibility Check and Roadmap re-run — they already have a Dossier, a Roadmap, and an established relationship. Similarly, when the Outcome Roadmap queues the next Teammate in sequence, the team picks up mid-process rather than restarting from scratch. The recommendation is to make the entry point explicit per engagement type: the 4 stages remain the process, but the starting stage depends on context.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Preserved</span><span style="font-size:11px;color:var(--gray-600)">Output</span><strong style="font-size:12px">MAI Process Map as standalone deliverable with JSON export — kept as written</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your Process Map Guide v1 defined the MAI Process Map as a standalone deliverable with a 6-swimlane methodology and JSON export format for the MAI Process Mapper application.</div>
+        <div class="rationale">Preserved exactly as written. All 6 swimlanes preserved (Job Area, Job Step, Systems/Assets, Desired Outcomes, Challenges, How AI Can Help). Two additional swimlanes from your guide also preserved: Human in the Loop (feeds the HTM column in Brief §4) and Listen For/Opportunity Signals (feeds Signal Synthesis). JSON export and Process Mapper reference preserved.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">P2 — In, no changes</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Feasibility Gate elevated to Stage 1 with formal output</strong></div><div class="changelog-body"><div class="rationale">Elevating the Feasibility Gate to a full Stage 1 with a named deliverable (Feasibility Report: Go/Blocker/Needs Info) creates a paper trail per Theme and means decisions are documented. Same 5 questions preserved. Accepted as written.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Preserved</span><span style="font-size:11px;color:var(--gray-600)">Output</span><strong style="font-size:12px">Prototype Brief standalone guide — kept as written</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your Prototype Brief Guide v1 defined the Prototype Brief as a standalone guide with Section A (What We're Testing), Section B (Context for the Build), hard constraints, Prototype Readiness Check, Handoff Chain, and "What the Prototype Brief is NOT" section.</div>
+        <div class="rationale">Preserved in full including the Handoff Chain (7 steps including Teams channel posting and tagging Dan) and the "What the Prototype Brief is NOT" framing. Constraints preserved: ONE core capability, ONE primary integration, 3–5 days max, no production-grade error handling, no full workflow coverage, built to validate not to ship.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">P3 — Modified</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Short/Medium/Long Term → Now/Next/Later</strong></div><div class="changelog-body"><div class="orig">v2.1 used a three-horizon AI Vision (Short Term / Medium Term / Long Term) implying phases with implied timing.</div><div class="rationale">The three-bucket structure is valuable for communicating strategic clarity — maintained. The timing framing is replaced. Now/Next/Later buckets are sequenced by dependency and readiness only — no dates, no quarters, no implied timelines. The pace of each phase is determined entirely by how fast the customer wants to move. This aligns with the workforce model: you hire the first Teammate, see what opens up, hire the next.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Output</span><strong style="font-size:12px">Meeting Prep and Action Item Capture reprioritized to P1</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your CCA Brief listed Meeting Prep at P1 and Action Item Capture at P1 — consistent with what v4.0 shows.</div>
+        <div class="rationale">Confirmed at P1. The AITM Requirements Brief, MAI Process Map, and Prototype Brief are the P0 outputs — the core deliverables of Solution Alignment. Meeting Prep and Action Item Capture are important operational skills but they support the scoping work, they don't define it.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">P4 — In, no changes</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Prototype Brief fires as early as first discovery call</strong></div><div class="changelog-body"><div class="rationale">Getting Brian moving early with a rough prototype surfaces real requirements faster than waiting for a complete process map. [UNKNOWN] fields are acceptable. Prototype explicitly framed as a requirements discovery tool — its job is to generate customer reaction. Accepted as written.</div></div></div>
+    <h3 style="margin:1.5rem 0 .75rem;color:var(--navy)">Design principles</h3>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">P5 — Modified</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Alignment Loop reinstated + prototype as default first move</strong></div><div class="changelog-body"><div class="orig">v2.1 absorbed the Alignment Loop into Stage 3 without explicitly calling out the iterative cycling mechanic.</div><div class="rationale">The Alignment Loop is reinstated explicitly inside Stage 3 as the operating mechanic. Prototyping and process mapping are both clarity tools — the CCA recommends whichever moves the customer furthest fastest. Prototype is the preferred default opening move: fast, tangible, creates excitement and customer buy-in early. The prototype is also a wow experience — this is a design goal, not an accident. The loop cycles until scope solidifies — cycling is by design, not a sign something went wrong.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Philosophy</span><strong style="font-size:12px">7th design principle added — outputs are non-negotiable</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your AITM Requirements Brief Guide defined 6 design principles: Conversational not bureaucratic, Iterative not one-pass, Outcome-led not tool-led, Prototype for clarity not impressiveness, Customer language not internal jargon, Checkpoints prevent confusion. Your guide stated: "when a guideline conflicts with a principle, the principle wins."</div>
+        <div class="rationale">All 6 of your principles are preserved verbatim — they're exactly right and they prevent the CCA from becoming a compliance engine. A seventh principle is added to draw the hard line: "Outputs are non-negotiable. The conversation is flexible. The Brief, Process Map, Prototype Brief, and Build Handoff Contract are not. No output leaves without meeting its completeness standard." This principle overrides all others when an output is at stake. The conversational flexibility your principles describe applies to how we get there — not to whether the final output meets its gate.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">P6 — In, no changes</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Customer Dossier added</strong></div><div class="changelog-body"><div class="rationale">The Customer Dossier is the CCA's persistent memory per account — enabling continuity across sessions, clean handoffs, and the land-and-expand motion. It is also the foundation for Remote governance. Accepted as written.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Preserved</span><span style="font-size:11px;color:var(--gray-600)">Philosophy</span><strong style="font-size:12px">Customer language rule — Bambi example preserved verbatim</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your Process Map Guide stated: "If the customer calls it 'the Bambi system,' we call it that." Customer language is used throughout Process Maps, Briefs, and AI Visions. Internal MAI terminology stays internal.</div>
+        <div class="rationale">Preserved verbatim including the Bambi example — concrete examples are worth more than abstract rules in a document the CCA operates from. The rule is now a core design principle elevated to Part 4, not just a note in the Process Map Guide.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-mod">P7 — Modified</span><span style="font-size:11px;color:var(--gray-600)">Process</span><strong style="font-size:12px">Signal Synthesis — event-based + quarterly backstop</strong></div><div class="changelog-body"><div class="orig">v2.1 specified a quarterly cadence for surfacing new Opportunities.</div><div class="rationale">The Signal Synthesis skillset is confirmed. New Opportunities surface in real time as sessions reveal them — event-based, not calendar-based. A quarterly check-in is preserved as a systematic minimum backstop. Both mechanisms work together.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Philosophy</span><strong style="font-size:12px">Prototype philosophy — third purpose added</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your Prototype Brief Guide defined two purposes: rough by design to surface real feedback, and built to validate not to ship. "A prototype demonstrates three things and nothing more: core capability works, key integration feasible, output realistic enough to react to."</div>
+        <div class="rationale">Your language is preserved. A third purpose is added explicitly: the prototype is a wow experience — a fast, tangible demo that creates genuine customer excitement and buy-in early in the engagement. The wow is not incidental. Getting a working prototype in the customer's hands in the first week creates excitement that drives better requirements and stronger engagement. All three purposes are stated as design intent: (1) requirements discovery tool, (2) feasibility validator, (3) wow experience.</div>
+      </div>
+    </div>
 
-    <h3 style="margin:1.25rem 0 .75rem;color:var(--navy)">Outputs</h3>
+    <h3 style="margin:1.5rem 0 .75rem;color:var(--navy)">Added — not in your original docs</h3>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">O1–O4 — In, no changes</span><span style="font-size:11px;color:var(--gray-600)">Outputs</span><strong style="font-size:12px">All four output changes accepted as written</strong></div><div class="changelog-body"><div class="rationale">Process Map as standalone deliverable with JSON export (O1): strong product asset — accepted. Skillset Training Guide as Brian's artifact (O2): accepted — note that the Training Guide needs its own guide document (open gap). Prototype Brief standalone guide (O3): accepted — "what it's not" section is particularly strong. Meeting Prep and Action Item Capture reprioritized to P1 (O4): correct — Brief, Process Map, and Prototype Brief are the P0 outputs.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">CCA Charter — Identity fields and M365 identity</strong></div>
+      <div class="changelog-body">
+        <div class="rationale">Your CCA Brief defined charlie@manageai.io as the CCA's M365 identity — permissioned like a real teammate. This is now a first-class field in the Charter Identity section (1.1) along with Agent ID (CUST-001), version (1.0), and team reference. The Agent ID format (CUST-001, CUST-001-SK-001) follows the OS Agent Template schema — these identifiers were assigned by Dave and were not in your original docs.</div>
+      </div>
+    </div>
 
-    <h3 style="margin:1.25rem 0 .75rem;color:var(--navy)">v3.1 Additions</h3>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">Remote™ Surface Map — stub pending Brian</strong></div>
+      <div class="changelog-body">
+        <div class="rationale">Not in your original docs. Required by the OS Agent Template — defines where the CCA's outputs appear in Manage AI Remote (Briefing, Desk, Team View, Deliverables, Control Layer). Stubbed with Brian as owner. If Remote can't see the output, it doesn't exist.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">Addition 1</span><span style="font-size:11px;color:var(--gray-600)">v3.1</span><strong style="font-size:12px">Opportunity Assessment Guide flagged as open gap</strong></div><div class="changelog-body"><div class="rationale">Gap callout added to Trigger Conditions section matching treatment of Skillset Training Guide. The Opportunity Assessment Guide — defining how the SE runs discovery, scores Themes, and hands off to the CCA — has not yet been created. Priority: create alongside the Skillset Training Guide.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">Operational Profile — partially populated, stub pending Jacob</strong></div>
+      <div class="changelog-body">
+        <div class="rationale">Not in your original docs. Required by the OS Agent Template — defines launch volume, SLA targets, and cost profile. Launch volume (4–6 customers, ramping to 6–8 discovery calls/week) and SLA targets are populated from your CCA Brief. Cost per session and token usage require Jacob and Brian input after first live engagements.</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">Addition 2</span><span style="font-size:11px;color:var(--gray-600)">v3.1</span><strong style="font-size:12px">CCA M365 identity added as required field</strong></div><div class="changelog-body"><div class="rationale">charlie@manageai.io added as a first-class required field in Charter Identity (1.1). Permissioned like a real teammate. This was in Dan's v3 Brief but didn't make it into the playbook doc.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">OS Key Principles — mapped to ManageAI context</strong></div>
+      <div class="changelog-body">
+        <div class="rationale">Not in your original docs. The OS defines 7 operating principles every agent must follow (Deterministic first, Separation of concerns, Fail safe not fail silent, Specification boundary, Trust progression, Management-native, Execution Decision Hierarchy). Part 4 maps each OS principle to how the CCA applies it, alongside your 6 original design principles + the 7th added in this doc. Two OS sections remain stubs pending Brian: Decision Trees (3.3) and Failure Modes (3.6).</div>
+      </div>
+    </div>
 
-    <div class="changelog-entry"><div class="changelog-header"><span class="badge badge-new">Addition 3</span><span style="font-size:11px;color:var(--gray-600)">v3.1</span><strong style="font-size:12px">Remote governance plan strengthened to required field</strong></div><div class="changelog-body"><div class="rationale">Remote governance plan strengthened to a required field in the Brief's Role & Responsibilities section (Section 2) — not optional. Every Responsibility must have a named human owner and a governance cadence defined in Remote.</div></div></div>
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">Infra Template — CCA on ManageAI's Middleweight AWS stack</strong></div>
+      <div class="changelog-body">
+        <div class="rationale">Not in your original docs — you did not write infrastructure specs. Part 5 is populated from ManageAI's own Middleweight AWS stack definition in the OS. Covers all 5 layers (AI Workforce Management, AI Models & Services, Execution Layer, Knowledge & Data, Enterprise Systems) plus Cross-Cutting Controls. Fields owned by Jacob are flagged TBD. Key decisions already defined: n8n on ECS Fargate (self-hosted, never cloud n8n), Claude Sonnet via Anthropic API, Pinecone with per-customer namespace isolation, PostgreSQL RDS for the Customer Dossier, charlie@manageai.io via Microsoft Entra.</div>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">Skillset stubs — Responsibilities 2, 3, and 4</strong></div>
+      <div class="changelog-body">
+        <div class="rationale">Your CCA Brief defined all 4 CCA Responsibilities but only Solution Alignment (R1) was fully documented. v4.0 adds formal Skillset stubs for Customer Dossier (R2 — Next Build), Land & Expand (R3 — Next Build), and Adoption Monitoring (R4 — Future). Each stub preserves your original Responsibility definition, KPIs, and intent. All three are marked clearly with their build status so Brian and Dan know what's live vs. what's coming.</div>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">Open gaps flagged — two guides still needed</strong></div>
+      <div class="changelog-body">
+        <div class="rationale">Two guide documents are called out as open gaps with warning callouts: (1) Opportunity Assessment Guide — defining how the SE runs discovery, scores Themes, and hands off to the CCA. Not yet created. Until it exists, SE handoff quality will vary. (2) Skillset Training Guide guide — defining standards, structure, and content requirements for Brian's HOW artifact. Not yet created. Without it, Brian has no standard for what the Training Guide should contain. Both are flagged as Priority: create alongside each other.</div>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">Remote governance plan — required field in Brief Section 2</strong></div>
+      <div class="changelog-body">
+        <div class="rationale">Your CCA Brief mentioned Remote governance but did not make it a required field in the Brief template. v4.0 makes the Remote governance plan a required field in Brief Section 2 (Role & Responsibilities) — not optional. Every Responsibility must have a named human owner and a governance cadence defined in Remote. Without this, Responsibilities exist on paper but have no operational accountability structure.</div>
+      </div>
+    </div>
 
     <hr>
     <p style="font-size:12px;color:var(--gray-500);margin-top:1rem">
-      <strong>v3.1 summary:</strong> 27 changes reviewed. 24 confirmed in. 11 with modifications. 0 out. 3 additional gaps identified.<br>
-      <strong>v4.0 summary:</strong> Full restructure into OS format. 24/24 decisions preserved. 13 new sections (7 stubs). 0 content lost.<br>
-      All changes prepared by Dave Albertson (CEO). Playbook maintained by Dave. Version increments require Dave's approval.
+      <strong>Summary:</strong> 20 changes documented. Content preserved from 4 original documents (AITM Requirements Brief Guide v1, CCA AITM Requirements Brief v3, Process Map Guide v1, Prototype Brief Guide v1). 0 content removed. All your language, rules, and design principles carried forward — restructured into OS format, refined where noted, extended with new OS-required sections.<br>
+      Prepared by Dave Albertson (CEO), March 2026. Playbook maintained by Dave. Version increments require Dave's approval.
     </p>
   </div>
 
