@@ -357,13 +357,13 @@
       <div class="identity-field"><div class="label">Name</div><div class="value">Chief Customer Agent (CCA)</div></div>
       <div class="identity-field"><div class="label">Team</div><div class="value">Customer</div></div>
       <div class="identity-field"><div class="label">Version</div><div class="value">1.0</div></div>
-      <div class="identity-field"><div class="label">M365 / System Identity</div><div class="value">charlie@manageai.io</div></div>
+      <div class="identity-field"><div class="label">M365 / System Identity</div><div class="value">charlie.ai@manageai.io</div></div>
       <div class="identity-field"><div class="label">AITM Owner</div><div class="value">Dan Ray (CCO)</div></div>
       <div class="identity-field"><div class="label">Parent Agent</div><div class="value">None — top-level agent</div></div>
       <div class="identity-field"><div class="label">Manage AI Lead</div><div class="value">Dan Ray</div></div>
     </div>
     <div class="callout">
-      <strong>Permissioned like a real teammate:</strong> charlie@manageai.io has M365 access scoped to the Customer team — Teams channels, calendar access for meeting prep, SharePoint for customer materials. Follows the same access principles as a human team member in the same role.
+      <strong>Permissioned like a real teammate:</strong> charlie.ai@manageai.io has M365 access scoped to the Customer team — Teams channels, calendar access for meeting prep, SharePoint for customer materials. Follows the same access principles as a human team member in the same role.
     </div>
   </div>
 
@@ -978,6 +978,7 @@
       <div class="callout"><strong>Separation of concerns:</strong> The Brief defines the WHAT and WHY. Brian's team creates the Skillset Training Guide (the HOW). Brief is readable by Dan, customers, and Sales — not just Brian.</div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 1</span><span class="name">AI Workforce Vision</span><span class="os-tag">OS: Operating Model</span></div><div class="brief-section-body"><strong>WHY — strategy, Now/Next/Later roadmap</strong><br>Company context, key stakeholders, and the three-bucket AI workforce strategy. No dates or timelines. An executive should read this section alone and understand where the engagement is going.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 2</span><span class="name">Role & Responsibilities</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>WHO — the AI Teammate, human owner, Remote governance</strong><br>AITM identity, role description, and Responsibilities table. Required fields: AITM Name, Assigned Skillset, AITM Owner (named human), M365/System Identity, and Remote governance plan per Responsibility. Remote governance plan is a required field — not optional.</div></div>
+      <div class="callout"><strong>AITM Owner vs Manage AI Lead:</strong> AITM Owner is the ManageAI team member who owns the AI Teammate's performance and governance. Manage AI Lead is the CSM managing the customer engagement. For the CCA, Dan holds both roles since ManageAI is our own first customer.</div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 3</span><span class="name">Current Reality & Process</span><span class="os-tag">OS: Workflow Map</span></div><div class="brief-section-body"><strong>TODAY — how work gets done now, pain points, volume</strong><br>Job Area summary table from the MAI Process Map. Step-by-step current-state process with: what happens, who does it, systems used, pain points. Triggers, volume, and current cycle time. Links to the full MAI Process Map artifact.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 4</span><span class="name">[Name]'s Workflow</span><span class="os-tag">OS: Workflow Map</span></div><div class="brief-section-body"><strong>TOMORROW — how the AI Teammate changes the work</strong><br>Step-by-step future-state workflow: what the Teammate does at each step, Skillset reference, inputs, outputs, human-in-the-loop flags, and edge cases.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 5</span><span class="name">What [Name] Does</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>HOW — Skillsets, Skills, rules, decision authority, guardrails</strong><br>Recommended Skillset Map (directional — Brian finalizes boundaries in the Training Guide). Behavioral rules. Decision Authority table: autonomous decisions, escalation paths, response SLAs. What the Teammate must never do.</div></div>
@@ -1185,7 +1186,7 @@
       <div class="infra-layer-body">
         <div class="table-wrap"><table><thead><tr><th>Field</th><th>CCA Value</th><th>Status</th></tr></thead><tbody>
           <tr><td>Cloud environment</td><td>AWS us-east-1</td><td><span class="badge badge-new">Defined</span></td></tr>
-          <tr><td>Identity & access</td><td>AWS IAM + Microsoft Entra (charlie@manageai.io)</td><td><span class="badge badge-new">Defined</span></td></tr>
+          <tr><td>Identity & access</td><td>AWS IAM + Microsoft Entra (charlie.ai@manageai.io)</td><td><span class="badge badge-new">Defined</span></td></tr>
           <tr><td>Compute</td><td>ECS Fargate (Remote Control, Orchestrator, MCP servers, n8n)</td><td><span class="badge badge-new">Defined</span></td></tr>
           <tr><td>IaC</td><td>Terraform</td><td><span class="badge badge-new">Defined</span></td></tr>
           <tr><td>Networking</td><td>VPC public/private subnets + NAT, ALB with path routing</td><td><span class="badge badge-new">Defined</span></td></tr>
@@ -1492,7 +1493,7 @@
     <div class="changelog-entry">
       <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">CCA Charter — Identity fields and M365 identity</strong></div>
       <div class="changelog-body">
-        <div class="rationale">Your CCA Brief defined charlie@manageai.io as the CCA's M365 identity — permissioned like a real teammate. This is now a first-class field in the Charter Identity section (1.1) along with Agent ID (CUST-001), version (1.0), and team reference. The Agent ID format (CUST-001, CUST-001-SK-001) follows the OS Agent Template schema — these identifiers were assigned by Dave and were not in your original docs.</div>
+        <div class="rationale">Your CCA Brief defined charlie.ai@manageai.io as the CCA's M365 identity — permissioned like a real teammate. This is now a first-class field in the Charter Identity section (1.1) along with Agent ID (CUST-001), version (1.0), and team reference. The Agent ID format (CUST-001, CUST-001-SK-001) follows the OS Agent Template schema — these identifiers were assigned by Dave and were not in your original docs.</div>
       </div>
     </div>
 
@@ -1520,7 +1521,7 @@
     <div class="changelog-entry">
       <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">Infra Template — CCA on ManageAI's Middleweight AWS stack</strong></div>
       <div class="changelog-body">
-        <div class="rationale">Not in your original docs — you did not write infrastructure specs. Part 5 is populated from ManageAI's own Middleweight AWS stack definition in the OS. Covers all 5 layers (AI Workforce Management, AI Models & Services, Execution Layer, Knowledge & Data, Enterprise Systems) plus Cross-Cutting Controls. Fields owned by Jacob are flagged TBD. Key decisions already defined: n8n on ECS Fargate (self-hosted, never cloud n8n), Claude Sonnet via Anthropic API, Pinecone with per-customer namespace isolation, PostgreSQL RDS for the Customer Dossier, charlie@manageai.io via Microsoft Entra.</div>
+        <div class="rationale">Not in your original docs — you did not write infrastructure specs. Part 5 is populated from ManageAI's own Middleweight AWS stack definition in the OS. Covers all 5 layers (AI Workforce Management, AI Models & Services, Execution Layer, Knowledge & Data, Enterprise Systems) plus Cross-Cutting Controls. Fields owned by Jacob are flagged TBD. Key decisions already defined: n8n on ECS Fargate (self-hosted, never cloud n8n), Claude Sonnet via Anthropic API, Pinecone with per-customer namespace isolation, PostgreSQL RDS for the Customer Dossier, charlie.ai@manageai.io via Microsoft Entra.</div>
       </div>
     </div>
 
@@ -1545,9 +1546,17 @@
       </div>
     </div>
 
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">AI Teammate email convention — [name].ai@manageai.io</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Your docs specified charlie@manageai.io as the CCA's M365 identity.</div>
+        <div class="rationale">Updated to charlie.ai@manageai.io to establish a consistent naming convention for all AI Teammates. The .ai suffix is instantly recognizable to any recipient as indicating an AI. Standard across all AITMs going forward: proposal.ai@manageai.io, rebekha.ai@manageai.io, etc.</div>
+      </div>
+    </div>
+
     <hr>
     <p style="font-size:12px;color:var(--gray-500);margin-top:1rem">
-      <strong>Summary:</strong> 20 changes documented. Content preserved from 4 original documents (AITM Requirements Brief Guide v1, CCA AITM Requirements Brief v3, Process Map Guide v1, Prototype Brief Guide v1). 0 content removed. All your language, rules, and design principles carried forward — restructured into OS format, refined where noted, extended with new OS-required sections.<br>
+      <strong>Summary:</strong> 21 changes documented. Content preserved from 4 original documents (AITM Requirements Brief Guide v1, CCA AITM Requirements Brief v3, Process Map Guide v1, Prototype Brief Guide v1). 0 content removed. All your language, rules, and design principles carried forward — restructured into OS format, refined where noted, extended with new OS-required sections.<br>
       Prepared by Dave Albertson (CEO), March 2026. Playbook maintained by Dave. Version increments require Dave's approval.
     </p>
   </div>
