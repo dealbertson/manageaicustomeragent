@@ -657,6 +657,7 @@
               <tr><td><strong>Guardrail Category</strong></td><td>Business rule + confidence threshold. Scope Freeze is a hard confidence gate — all sections must be "Complete" before handoff. No exceptions.</td></tr>
               <tr><td><strong>Playbook Reference</strong></td><td>Part 3 of this document — Solution Alignment Playbook (3.1–3.8)</td></tr>
               <tr><td><strong>Dependencies</strong></td><td>Upstream: SE Opportunity Assessment (Rebekha/Dave). Downstream: Build team (Brian) for Skillset Training Guide, Architecture team (Jacob) for infra decisions.</td></tr>
+              <tr><td><strong>Scope Boundary</strong></td><td><strong>Begins:</strong> SE completes Opportunity Assessment, hands off prioritized Themes to CCA. <strong>Ends:</strong> Requirements-complete AITM Requirements Brief passes Business Requirements Scope Freeze → Engineering Handoff to Brian. <strong>Out of scope:</strong> Opportunity Assessment (Rebekha/SE), engineering build (Brian), post-deployment monitoring (Responsibility 4 — future build).</td></tr>
             </tbody>
           </table>
         </div>
@@ -758,7 +759,7 @@
       <table>
         <thead><tr><th>Trigger</th><th>Context</th><th>Entry Stage</th><th>Starting Input</th></tr></thead>
         <tbody>
-          <tr><td><strong>01 — New Engagement</strong></td><td>SE completes Opportunity Assessment and hands off prioritized Themes to the CCA.</td><td>Stage 1 — Feasibility</td><td>Prioritized Themes + SE discovery context</td></tr>
+          <tr><td><strong>01 — New Engagement</strong></td><td>SE completes Opportunity Assessment and hands off prioritized Themes to the CCA. In the medium term, Rebekha (SE Agent) runs Opportunity Assessment autonomously — for now, Dave runs it with Rebekha as the future state.</td><td>Stage 1 — Feasibility</td><td>Prioritized Themes + SE discovery context</td></tr>
           <tr><td><strong>02 — Existing Customer New Request</strong></td><td>Existing customer requests a new AI Teammate or Skillset enhancement.</td><td>Stage 2 — Roadmap & Vision</td><td>Existing Customer Dossier + new request context</td></tr>
           <tr><td><strong>03 — Roadmap Execution</strong></td><td>Outcome Roadmap queues the next AI Teammate when prior Teammate ships.</td><td>Stage 3 — Map & Prototype</td><td>Existing Dossier + Roadmap item + prior context</td></tr>
         </tbody>
@@ -925,6 +926,23 @@
         </table>
       </div>
       <div class="callout rule"><strong>Hard constraints:</strong> ONE core capability. ONE primary integration. 3–5 days max build time. No production-grade error handling. No full workflow coverage. Built to validate, not to ship. Real data preferred.</div>
+
+      <h4>What the Prototype Brief is NOT</h4>
+      <ul>
+        <li><strong>Not an AITM Requirements Brief.</strong> It doesn't define acceptance criteria, guardrails, decision authority, or the full workflow. Those come later.</li>
+        <li><strong>Not a technical spec.</strong> Brian decides HOW to build the prototype. The Brief tells him WHAT to demonstrate and to WHOM.</li>
+        <li><strong>Not a commitment to the customer.</strong> The prototype is a conversation tool, not a deliverable. The customer reacts to it — they don't keep it. If anyone starts talking about "going live" with the prototype, scope has drifted.</li>
+        <li><strong>Not a one-time artifact.</strong> Multiple Prototype Briefs may be produced for the same Opportunity as scope refines through the Alignment Loop.</li>
+      </ul>
+
+      <h4>Handoff Chain</h4>
+      <div class="loop-step"><div class="loop-step-num">1</div><div class="loop-step-content"><strong>CCA assembles the Prototype Brief</strong><span>From discovery and alignment context. Can fire as early as after the first discovery call.</span></div></div>
+      <div class="loop-step"><div class="loop-step-num">2</div><div class="loop-step-content"><strong>CCA posts to Customer Channel in Teams</strong><span>Tags Dan for review. CCA never sends directly to Brian.</span></div></div>
+      <div class="loop-step"><div class="loop-step-num">3</div><div class="loop-step-content"><strong>Dan reviews via Feedback Loop</strong><span>Confirms, adjusts, or asks for more context.</span></div></div>
+      <div class="loop-step"><div class="loop-step-num">4</div><div class="loop-step-content"><strong>Dan forwards to Brian</strong><span>Or Brian's Build Agent picks it up from the channel.</span></div></div>
+      <div class="loop-step"><div class="loop-step-num">5</div><div class="loop-step-content"><strong>Brian builds the prototype</strong><span>3–5 days max.</span></div></div>
+      <div class="loop-step"><div class="loop-step-num">6</div><div class="loop-step-content"><strong>Dan presents the prototype to the customer</strong><span>CCA captures every reaction — what worked, what missed, what's missing.</span></div></div>
+      <div class="loop-step"><div class="loop-step-num">7</div><div class="loop-step-content"><strong>Feedback flows into the AITM Requirements Brief</strong><span>Customer reactions are the richest source of requirements in the entire process.</span></div></div>
     </div>
 
     <div class="subsection">
@@ -941,6 +959,17 @@
             <tr><td><strong>Desired Outcomes</strong></td><td>The north-star outcome for this Job Area.</td><td>Measurable where possible. Customer's own language. 1–3 per Job Area.</td></tr>
             <tr><td><strong>Challenges</strong></td><td>What's hard, broken, or manual today.</td><td>Grounded in transcript evidence. Include metrics and customer quotes.</td></tr>
             <tr><td><strong>How AI Can Help</strong></td><td>Specific AI solutions paired to each challenge.</td><td>Concrete, not generic. Reference specific Skillsets where known.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h4>Additional Swimlanes</h4>
+      <p>Beyond the core 6 swimlanes, MAI process maps include two additional lanes that feed directly into downstream artifacts:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Swimlane</th><th>What It Captures</th><th>Where It Feeds</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Human in the Loop</strong></td><td>Which steps require a human touchpoint — every step where a person must review, approve, or intervene. Marked explicitly on the map.</td><td>Directly feeds the HTM column in the AITM Requirements Brief workflow table (§4). Non-optional — if a step has a human gate, it must be flagged here.</td></tr>
+            <tr><td><strong>Listen For (Opportunity Signals)</strong></td><td>Specific observations at the Job Step level that indicate an AI opportunity exists. Temporary artifacts — captured during mapping and synthesized into formal Opportunities during Signal Synthesis.</td><td>Feeds the Signal Synthesis skill → Opportunity Tracker in Customer Dossier → Outcome Roadmap updates. Not every step has a signal.</td></tr>
           </tbody>
         </table>
       </div>
@@ -1302,7 +1331,9 @@
       <tr><td>Part 5: Infra Template</td><td><span class="badge badge-new">Mostly populated</span></td><td>Jacob (TBD fields)</td></tr>
     </tbody></table></div>
 
-    <p style="font-size:13px;color:var(--gray-500);margin-top:1rem"><strong>v4.0 summary:</strong> Full restructure into OS format. 24/24 v3.1 decisions preserved. 13 new sections added (7 stubs needing Brian/Jacob input). 0 content lost. Dan's v3.1 changelog preserved in full below.<br>Changes prepared by Dave Albertson (CEO), March 2026.</p>
+    <p style="font-size:13px;color:var(--gray-500);margin-top:1rem"><strong>v4.0 summary:</strong> Full restructure into OS format. 24/24 v3.1 decisions preserved. 13 new sections added (7 stubs needing Brian/Jacob input). 0 content lost. Dan's v3.1 changelog preserved in full below.<br>
+    <strong>Note on new content introduced in v4.0:</strong> Two categories of content are new and were not derived from Dan's original docs or our audit decisions — (1) Agent ID format (CUST-001, CUST-001-SK-001) and Skillset ID numbering — these are OS template identifiers assigned by Dave to conform to the OS schema; and (2) the full Infra Template (Part 5) — populated from ManageAI's own Middleweight AWS stack definition from the OS, not from Dan's docs which did not include infrastructure specs. Both additions are correct and intentional.<br>
+    Changes prepared by Dave Albertson (CEO), March 2026.</p>
   </div>
 
   <!-- v3.1 CHANGELOG (PRESERVED VERBATIM) -->
