@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manage AI — Customer Agent: Solution Alignment Skillset v3.0</title>
+<title>Manage AI — Customer Agent: Solution Alignment Skillset v3.1</title>
 <style>
   :root {
     --navy: #0d1b2a;
@@ -470,7 +470,7 @@
     &nbsp;·&nbsp; Agent Skillset Playbooks
   </div>
   <div class="controls">
-    <span class="version-badge">v3.0</span>
+    <span class="version-badge">v3.1</span>
     <button onclick="window.print()">Print</button>
   </div>
 </header>
@@ -532,7 +532,7 @@
     </div>
     <div class="sidebar-section">
       <div class="sidebar-section-title">Changelog</div>
-      <a href="#changelog" class="sidebar-link">v3.0 Changes</a>
+      <a href="#changelog" class="sidebar-link">v3.1 Changes</a>
     </div>
   </nav>
 
@@ -543,7 +543,7 @@
     <div class="doc-header">
       <div class="doc-meta">
         <span class="meta-tag internal">Internal Use</span>
-        <span class="meta-tag version">v3.0</span>
+        <span class="meta-tag version">v3.1</span>
         <span class="meta-tag date">March 2026</span>
       </div>
       <h1>Customer Agent · Solution Alignment Skillset</h1>
@@ -797,6 +797,9 @@
 
         <div class="callout rule">
           <strong>Gate Rule:</strong> If any feasibility question is a clear "no," don't start Alignment. Deprioritize the build, resolve the blocker, or replace it with the next roadmap item. Alignment time is expensive — don't spend it on builds that can't ship.
+        </div>
+        <div class="callout warning">
+          <strong>Gap to fill:</strong> The Opportunity Assessment Guide — defining how the SE runs the discovery conversation, scores Themes, and hands off to the CCA — has not yet been created. This is an open gap in the document ecosystem. Until it exists, SE handoff quality will vary and the input to Stage 1 will be inconsistent. Priority: create alongside the Skillset Training Guide.
         </div>
       </div>
     </div>
@@ -1196,7 +1199,7 @@
         </div>
         <div class="brief-section-body">
           <strong>WHO — the AI Teammate, human owner, Remote governance</strong><br>
-          AITM identity, role description, and Responsibilities table. Each Responsibility includes: outcome, Vision phase (Now/Next/Later), KPIs, primary output, named human owner, and Remote governance plan. The role should make clear why this Teammate exists — not just what it does, but what changes when it's working.
+          AITM identity, role description, and Responsibilities table. Required fields: AITM Name, Assigned Skillset, AITM Owner (named human), M365/System Identity (e.g. charlie@manageai.io — permissioned like a real teammate), and Remote governance plan per Responsibility. Each Responsibility must include: outcome, Vision phase (Now/Next/Later), KPIs, primary output, named human owner, and the governance cadence defined in Remote. The Remote governance plan is a required field — not optional. The role should make clear why this Teammate exists — not just what it does, but what changes when it's working.
         </div>
       </div>
 
@@ -1825,10 +1828,106 @@
     <div class="section" id="changelog">
       <div class="section-header">
         <span class="section-num">Changelog</span>
-        <h2>v3.0 Changes from v2.1</h2>
+        <h2>v3.1 Changes from v2.1</h2>
       </div>
 
-      <p>This changelog documents every material change from v2.1 to v3.0 with rationale. Prepared for Dan Ray following a structured audit of the v2.1 spec against the original v2.1 playbook and ManageAI's operating model.</p>
+      <p>This changelog documents every material change from v2.1 to v3.1 with rationale. Prepared for Dan Ray following a structured audit of the v2.1 spec against the original v2.1 playbook and ManageAI's operating model.</p>
+<h3 style="margin: 1.5rem 0 1rem; color: var(--navy);">Structure</h3>
+
+      <div class="changelog-entry">
+        <div class="changelog-header">
+          <span class="badge badge-mod">S1 — Modified</span>
+          <span style="font-size:12px; color: var(--gray-600);">Structure</span>
+          <strong style="font-size:13px;">7-section Brief — reordered and renamed</strong>
+        </div>
+        <div class="changelog-body">
+          <div class="orig">v2.1 had 7 sections in a different order: AI Vision → Role & Responsibilities → Current Reality → What the AITM Does → Knowledge & Data → AITM Workflow → How We Know It's Ready.</div>
+          <div class="rationale">Sections reordered for narrative clarity: WHY → WHO → TODAY → TOMORROW → HOW → WITH WHAT → PROOF. Key renames: "AI Vision" → "AI Workforce Vision" (connects to ManageAI positioning); "Knowledge & Data" → "Knowledge & Systems" (broader and more accurate — covers integrations, access, identity, compliance, not just data); "What the AITM Does" → "What [Name] Does" (personalized to the actual Teammate); "AITM Workflow" → "[Name]'s Workflow" (same personalization); "How We Know It's Ready" → "How We Know It's Working" (covers both pre-launch criteria and ongoing metrics). Dan's section names are the primary language — OS template references are background team knowledge, not added to the document.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-header">
+          <span class="badge badge-new">S2 — In, no changes</span>
+          <span style="font-size:12px; color: var(--gray-600);">Structure</span>
+          <strong style="font-size:13px;">Business Requirements Scope Freeze preserved</strong>
+        </div>
+        <div class="changelog-body">
+          <div class="rationale">"Scope Freeze" is cleaner language than "Readiness Check." Confidence Scoring (Complete/Partial/Missing) and hard rule maintained. Audit maps to updated 7-section structure. Accepted as written.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-header">
+          <span class="badge badge-mod">S3 — Modified</span>
+          <span style="font-size:12px; color: var(--gray-600);">Structure</span>
+          <strong style="font-size:13px;">Build Handoff Contract reinstated as first-class artifact</strong>
+        </div>
+        <div class="changelog-body">
+          <div class="orig">v2.1 embedded the "Must Never Ask For" concept inside the Brief guide rather than keeping it as a standalone artifact.</div>
+          <div class="rationale">The Build Handoff Contract is too important to be buried in a guide. It is reinstated as a standalone, prominently placed artifact. The "Must Never Ask For" list with explicit mapping to Brief sections, the "May Ask For" list for Jacob, and hard enforcement (scope reopens if violated) are all preserved. This protects Build team delivery velocity and Dan's time.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-header">
+          <span class="badge badge-new">S4 — In, no changes</span>
+          <span style="font-size:12px; color: var(--gray-600);">Structure</span>
+          <strong style="font-size:13px;">Decision Authority table preserved</strong>
+        </div>
+        <div class="changelog-body">
+          <div class="rationale">Decision Authority table preserved as written. Autonomous decisions, escalation paths, response expectations, and Never rows all intact. Accepted as written.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-header">
+          <span class="badge badge-mod">S5 — Modified (reinstated)</span>
+          <span style="font-size:12px; color: var(--gray-600);">Structure</span>
+          <strong style="font-size:13px;">Skillset Learning Loop reinstated explicitly</strong>
+        </div>
+        <div class="changelog-body">
+          <div class="orig">v2.1 did not carry the Skillset Learning Loop forward. It was implied in the CCA's ongoing responsibilities but not formally defined.</div>
+          <div class="rationale">This is one of the most important mechanisms in the entire system and must be explicit, formal, and prominent — not implied. It is how the process gets smarter with every engagement. Without it we repeat the same mistakes across customers with no systematic improvement path. The formal Skillset Improvement Entry template, pattern flagging (same root cause across 2+ engagements escalates priority), Dave + Dan monthly review cadence, and playbook versioning are all reinstated verbatim.</div>
+        </div>
+      </div>
+
+      <h3 style="margin: 1.5rem 0 1rem; color: var(--navy);">Philosophy</h3>
+
+      <div class="changelog-entry">
+        <div class="changelog-header">
+          <span class="badge badge-mod">Ph1 — Modified</span>
+          <span style="font-size:12px; color: var(--gray-600);">Philosophy</span>
+          <strong style="font-size:13px;">7th design principle added — outputs are non-negotiable</strong>
+        </div>
+        <div class="changelog-body">
+          <div class="orig">v2.1 had 6 design principles where principles override guidelines — encouraging conversational judgment throughout.</div>
+          <div class="rationale">Dan's 6 principles are preserved and correct — they prevent the CCA from becoming robotic and ensure the process feels like working with a sharp colleague, not filling out forms. A seventh principle is added to draw the hard line: "Outputs are non-negotiable. The conversation is flexible. The Brief, Process Map, Prototype Brief, and Build Handoff Contract are not. No output leaves without meeting its completeness standard." This principle overrides all others when an output is at stake.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-header">
+          <span class="badge badge-new">Ph2 — In, no changes</span>
+          <span style="font-size:12px; color: var(--gray-600);">Philosophy</span>
+          <strong style="font-size:13px;">Customer language enforcement elevated</strong>
+        </div>
+        <div class="changelog-body">
+          <div class="rationale">Customer language enforcement elevated to a core design principle with the Bambi example preserved verbatim. Concrete examples are worth more than abstract rules in a document the CCA operates from. Accepted as written.</div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="changelog-header">
+          <span class="badge badge-mod">Ph3 — Modified</span>
+          <span style="font-size:12px; color: var(--gray-600);">Philosophy</span>
+          <strong style="font-size:13px;">Prototype philosophy — three purposes added explicitly</strong>
+        </div>
+        <div class="changelog-body">
+          <div class="orig">v2.1 sharpened the prototype philosophy with "rough by design" and "built to validate, not to ship."</div>
+          <div class="rationale">Dan's sharpened language is preserved. A third purpose is added explicitly: the prototype is a wow experience that creates genuine customer excitement and buy-in early in the engagement. All three purposes are now stated as design intent: (1) requirements discovery tool, (2) feasibility validator, (3) wow experience. The wow is not incidental — it is a design goal of the process.</div>
+        </div>
+      </div>
 
       <h3 style="margin: 1.5rem 0 1rem; color: var(--navy);">Terminology</h3>
 
@@ -1852,7 +1951,7 @@
         </div>
         <div class="changelog-body">
           <div class="orig">v2.1 introduced Objective → Responsibility → Skillset → Training but left definitions loose.</div>
-          <div class="rationale">Dan's four-tier structure is correct and maintained. Definitions have been made precise with explicit WHY/WHAT/HOW/DEPLOY anchors. Business Objective is explicit as the WHY anchor. Responsibility gets a tighter definition: specific outcomes + named human owner + Remote governance plan. Training broadened to holistic deployment — all agent and infra changes, not just initial setup. Skill confirmed as customer-visible build subcomponent of Skillset.</div>
+          <div class="rationale">Dan's four-tier structure is correct and maintained. Definitions have been made precise with explicit WHY/WHAT/HOW/DEPLOY anchors. Business Objective is explicit as the WHY anchor. Responsibility gets a tighter definition: specific outcomes + named human owner + Remote governance plan. Training definition broadened to cover the full scope of everything needed to make an AI Teammate perform — agent configuration, system prompt updates, knowledge base setup, tool connections, API integrations, and infrastructure template changes. This is not narrowly defined as knowledge vault updates or isolated component changes — Training means any and all updates required to change how the AITM functions, including infra changes. Skill confirmed as customer-visible build subcomponent of Skillset.</div>
         </div>
       </div>
 
@@ -1900,7 +1999,8 @@
         </div>
         <div class="changelog-body">
           <div class="orig">v2.1 replaced the original 3 triggers with 4 linear stages, assuming every engagement starts at Stage 1.</div>
-          <div class="rationale">Dan's 4 stages are preserved as the macro process structure. The original's 3 triggers are reintroduced as entry point logic — they determine where you enter the stage model, not a separate process. New engagement → Stage 1. Existing customer new request → Stage 2. Roadmap execution → Stage 3. Team naming defers to the OS throughout.</div>
+          <div class="orig">v2.1 structured the process as 4 sequential stages and assumed every engagement begins at Stage 1 — Feasibility Check.</div>
+          <div class="rationale">Dan's 4 stages are the right macro structure and are fully preserved. The modification is about recognizing that not every customer context starts at the beginning. A brand new engagement with no prior history starts at Stage 1 as written. But an existing customer who requests a new AI Teammate doesn't need a full Feasibility Check and Roadmap re-run — they already have a Dossier, a Roadmap, and an established relationship. Similarly, when the Outcome Roadmap queues the next Teammate in sequence, the team picks up mid-process rather than restarting from scratch. The recommendation is to make the entry point explicit per engagement type: the 4 stages remain the process, but the starting stage depends on context. This also means the "Must Never Ask For" enforcement, team naming, and OS role references are standardized throughout — Build team (Brian) and Architecture team (Jacob) replace any informal team references, with the OS as the authoritative source for all team names going forward.</div>
         </div>
       </div>
 
@@ -1973,66 +2073,6 @@
         </div>
       </div>
 
-      <h3 style="margin: 1.5rem 0 1rem; color: var(--navy);">Structure</h3>
-
-      <div class="changelog-entry">
-        <div class="changelog-header">
-          <span class="badge badge-mod">S1 — Modified</span>
-          <span style="font-size:12px; color: var(--gray-600);">Structure</span>
-          <strong style="font-size:13px;">7-section Brief — reordered and renamed</strong>
-        </div>
-        <div class="changelog-body">
-          <div class="orig">v2.1 had 7 sections in a different order: AI Vision → Role & Responsibilities → Current Reality → What the AITM Does → Knowledge & Data → AITM Workflow → How We Know It's Ready.</div>
-          <div class="rationale">Sections reordered for narrative clarity: WHY → WHO → TODAY → TOMORROW → HOW → WITH WHAT → PROOF. Key renames: "AI Vision" → "AI Workforce Vision" (connects to ManageAI positioning); "Knowledge & Data" → "Knowledge & Systems" (broader and more accurate — covers integrations, access, identity, compliance, not just data); "What the AITM Does" → "What [Name] Does" (personalized to the actual Teammate); "AITM Workflow" → "[Name]'s Workflow" (same personalization); "How We Know It's Ready" → "How We Know It's Working" (covers both pre-launch criteria and ongoing metrics). Dan's section names are the primary language — OS template references are background team knowledge, not added to the document.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <div class="changelog-header">
-          <span class="badge badge-new">S2 — In, no changes</span>
-          <span style="font-size:12px; color: var(--gray-600);">Structure</span>
-          <strong style="font-size:13px;">Business Requirements Scope Freeze preserved</strong>
-        </div>
-        <div class="changelog-body">
-          <div class="rationale">"Scope Freeze" is cleaner language than "Readiness Check." Confidence Scoring (Complete/Partial/Missing) and hard rule maintained. Audit maps to updated 7-section structure. Accepted as written.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <div class="changelog-header">
-          <span class="badge badge-mod">S3 — Modified</span>
-          <span style="font-size:12px; color: var(--gray-600);">Structure</span>
-          <strong style="font-size:13px;">Build Handoff Contract reinstated as first-class artifact</strong>
-        </div>
-        <div class="changelog-body">
-          <div class="orig">v2.1 embedded the "Must Never Ask For" concept inside the Brief guide rather than keeping it as a standalone artifact.</div>
-          <div class="rationale">The Build Handoff Contract is too important to be buried in a guide. It is reinstated as a standalone, prominently placed artifact. The "Must Never Ask For" list with explicit mapping to Brief sections, the "May Ask For" list for Jacob, and hard enforcement (scope reopens if violated) are all preserved. This protects Build team delivery velocity and Dan's time.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <div class="changelog-header">
-          <span class="badge badge-new">S4 — In, no changes</span>
-          <span style="font-size:12px; color: var(--gray-600);">Structure</span>
-          <strong style="font-size:13px;">Decision Authority table preserved</strong>
-        </div>
-        <div class="changelog-body">
-          <div class="rationale">Decision Authority table preserved as written. Autonomous decisions, escalation paths, response expectations, and Never rows all intact. Accepted as written.</div>
-        </div>
-      </div>
-
-      <div class="changelog-entry">
-        <div class="changelog-header">
-          <span class="badge badge-mod">S5 — Modified (reinstated)</span>
-          <span style="font-size:12px; color: var(--gray-600);">Structure</span>
-          <strong style="font-size:13px;">Skillset Learning Loop reinstated explicitly</strong>
-        </div>
-        <div class="changelog-body">
-          <div class="orig">v2.1 did not carry the Skillset Learning Loop forward. It was implied in the CCA's ongoing responsibilities but not formally defined.</div>
-          <div class="rationale">This is one of the most important mechanisms in the entire system and must be explicit, formal, and prominent — not implied. It is how the process gets smarter with every engagement. Without it we repeat the same mistakes across customers with no systematic improvement path. The formal Skillset Improvement Entry template, pattern flagging (same root cause across 2+ engagements escalates priority), Dave + Dan monthly review cadence, and playbook versioning are all reinstated verbatim.</div>
-        </div>
-      </div>
-
       <h3 style="margin: 1.5rem 0 1rem; color: var(--navy);">Outputs</h3>
 
       <div class="changelog-entry">
@@ -2046,46 +2086,42 @@
         </div>
       </div>
 
-      <h3 style="margin: 1.5rem 0 1rem; color: var(--navy);">Philosophy</h3>
+      
+      <h3 style="margin: 1.5rem 0 1rem; color: var(--navy);">v3.1 Additions</h3>
 
       <div class="changelog-entry">
         <div class="changelog-header">
-          <span class="badge badge-mod">Ph1 — Modified</span>
-          <span style="font-size:12px; color: var(--gray-600);">Philosophy</span>
-          <strong style="font-size:13px;">7th design principle added — outputs are non-negotiable</strong>
+          <span class="badge badge-new">A1 — New</span>
+          <span style="font-size:12px; color: var(--gray-600);">v3.1 Addition</span>
+          <strong style="font-size:13px;">Opportunity Assessment Guide flagged as open gap — callout added to Feasibility Gate section matching treatment of Skillset Training Guide</strong>
         </div>
         <div class="changelog-body">
-          <div class="orig">v2.1 had 6 design principles where principles override guidelines — encouraging conversational judgment throughout.</div>
-          <div class="rationale">Dan's 6 principles are preserved and correct — they prevent the CCA from becoming robotic and ensure the process feels like working with a sharp colleague, not filling out forms. A seventh principle is added to draw the hard line: "Outputs are non-negotiable. The conversation is flexible. The Brief, Process Map, Prototype Brief, and Build Handoff Contract are not. No output leaves without meeting its completeness standard." This principle overrides all others when an output is at stake.</div>
         </div>
       </div>
 
       <div class="changelog-entry">
         <div class="changelog-header">
-          <span class="badge badge-new">Ph2 — In, no changes</span>
-          <span style="font-size:12px; color: var(--gray-600);">Philosophy</span>
-          <strong style="font-size:13px;">Customer language enforcement elevated</strong>
+          <span class="badge badge-new">A2 — New</span>
+          <span style="font-size:12px; color: var(--gray-600);">v3.1 Addition</span>
+          <strong style="font-size:13px;">CCA M365 identity (charlie@manageai.io) added as required field in Section 2 brief template</strong>
         </div>
         <div class="changelog-body">
-          <div class="rationale">Customer language enforcement elevated to a core design principle with the Bambi example preserved verbatim. Concrete examples are worth more than abstract rules in a document the CCA operates from. Accepted as written.</div>
         </div>
       </div>
 
       <div class="changelog-entry">
         <div class="changelog-header">
-          <span class="badge badge-mod">Ph3 — Modified</span>
-          <span style="font-size:12px; color: var(--gray-600);">Philosophy</span>
-          <strong style="font-size:13px;">Prototype philosophy — three purposes added explicitly</strong>
+          <span class="badge badge-new">A3 — New</span>
+          <span style="font-size:12px; color: var(--gray-600);">v3.1 Addition</span>
+          <strong style="font-size:13px;">Remote governance plan strengthened to required field in Section 2 — not optional</strong>
         </div>
         <div class="changelog-body">
-          <div class="orig">v2.1 sharpened the prototype philosophy with "rough by design" and "built to validate, not to ship."</div>
-          <div class="rationale">Dan's sharpened language is preserved. A third purpose is added explicitly: the prototype is a wow experience that creates genuine customer excitement and buy-in early in the engagement. All three purposes are now stated as design intent: (1) requirements discovery tool, (2) feasibility validator, (3) wow experience. The wow is not incidental — it is a design goal of the process.</div>
         </div>
       </div>
 
-      <hr>
+<hr>
       <p style="font-size: 13px; color: var(--gray-500); margin-top: 1rem;">
-        <strong>Summary:</strong> 24 changes audited. 24 confirmed in. 11 with modifications. 0 out.<br>
+        <strong>Summary:</strong> 27 changes reviewed. 24 confirmed in. 11 with modifications. 0 out. 3 additional gaps identified in v3.1 audit.<br>
         Changes prepared by Dave Albertson (CEO) following structured audit session, March 2026.<br>
         Playbook maintained by Dave. Version increments require Dave's approval.
       </p>
@@ -2093,7 +2129,7 @@
 
     <div class="doc-footer">
       © 2026 Manage AI. All rights reserved. Confidential. Internal use only.<br>
-      Customer Agent · Solution Alignment Skillset · v3.0 · March 2026
+      Customer Agent · Solution Alignment Skillset · v3.1 · March 2026
     </div>
 
   </main>
