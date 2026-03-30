@@ -43,10 +43,10 @@
   .version-badge { background: var(--accent); color: white; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 3px; letter-spacing: .04em; }
 
   /* LAYOUT */
-  .layout { display: flex; margin-top: 56px; min-height: calc(100vh - 56px); }
+  .layout { margin-top: 56px; min-height: calc(100vh - 56px); }
 
   /* SIDEBAR */
-  .sidebar { width: var(--sidebar-width); flex-shrink: 0; background: white; border-right: 1px solid var(--gray-200); position: sticky; top: 56px; height: calc(100vh - 56px); align-self: flex-start; overflow-y: auto; overflow-x: hidden; padding: 1.25rem 0; z-index: 50; }
+  .sidebar { width: 310px; background: white; border-right: 1px solid var(--gray-200); position: fixed; left: 0; top: 56px; bottom: 0; overflow-y: auto; overflow-x: hidden; padding: 1.25rem 0; z-index: 50; }
   .sidebar-section { margin-bottom: .25rem; }
   .sidebar-section-title { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-500); padding: .75rem 1.25rem .25rem 1.15rem; }
   .sidebar-part { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); padding: .6rem 1.25rem .2rem 1.15rem; margin-top: .25rem; background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
@@ -56,7 +56,7 @@
   .sidebar-link.sub { padding-left: 1.6rem; font-size: 11.5px; }
 
   /* MAIN */
-  .main { flex: 1; min-width: 0; padding: 2.5rem 3rem; max-width: 920px; overflow-x: hidden; }
+  .main { margin-left: 310px !important; padding: 2.5rem 3rem; max-width: 920px; overflow-x: hidden; }
 
   /* DOC HEADER */
   .doc-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--gray-200); }
@@ -187,7 +187,7 @@
 
   .doc-footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-200); font-size: 12px; color: var(--gray-500); text-align: center; }
 
-  @media print { .sidebar, .site-header, .controls { display: none; } .layout { display: block; margin-top: 0; } .main { padding: 1rem; max-width: 100%; } }
+  @media print { .sidebar, .site-header, .controls { display: none; } .main { margin-left: 0 !important; padding: 1rem; max-width: 100%; } }
 </style>
 </head>
 <body>
