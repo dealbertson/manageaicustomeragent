@@ -360,10 +360,10 @@
       <div class="identity-field"><div class="label">M365 / System Identity</div><div class="value">charlie.ai@manageai.io</div></div>
       <div class="identity-field"><div class="label">AITM Owner</div><div class="value">Dan Ray (CCO)</div></div>
       <div class="identity-field"><div class="label">Parent Agent</div><div class="value">None — top-level agent</div></div>
-      <div class="identity-field"><div class="label">Manage AI Lead</div><div class="value">Dan Ray</div></div>
     </div>
     <div class="callout">
-      <strong>Permissioned like a real teammate:</strong> charlie.ai@manageai.io has M365 access scoped to the Customer team — Teams channels, calendar access for meeting prep, SharePoint for customer materials. Follows the same access principles as a human team member in the same role.
+      <strong>AITM Owner vs Manage AI Lead:</strong> In customer deployments, AITM Owner is the ManageAI team member who owns the AI Teammate's performance and governance. Manage AI Lead is the CSM managing the customer engagement. For the CCA, Dan holds both roles since ManageAI is our own first customer.
+    </div> charlie.ai@manageai.io has M365 access scoped to the Customer team — Teams channels, calendar access for meeting prep, SharePoint for customer materials. Follows the same access principles as a human team member in the same role.
     </div>
   </div>
 
@@ -488,7 +488,7 @@
       </ul>
     </div>
     <div class="callout rule">
-      <strong>Output enforcement rule (Principle 7):</strong> The conversation is flexible. The Brief, Process Map, Prototype Brief, and Build Handoff Contract are not. No output leaves without meeting its completeness standard. This rule overrides all others when an output is at stake.
+      <strong>Output structure enforcement rule (Principle 7):</strong> Every Brief, Process Map, Prototype Brief, and Handoff Contract always ships in its defined format — all sections present, all required fields included. The structure is non-negotiable. Completeness level within fields is governed by Confidence Scoring and Dan's sign-off.
     </div>
   </div>
 
@@ -978,7 +978,6 @@
       <div class="callout"><strong>Separation of concerns:</strong> The Brief defines the WHAT and WHY. Brian's team creates the Skillset Training Guide (the HOW). Brief is readable by Dan, customers, and Sales — not just Brian.</div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 1</span><span class="name">AI Workforce Vision</span><span class="os-tag">OS: Operating Model</span></div><div class="brief-section-body"><strong>WHY — strategy, Now/Next/Later roadmap</strong><br>Company context, key stakeholders, and the three-bucket AI workforce strategy. No dates or timelines. An executive should read this section alone and understand where the engagement is going.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 2</span><span class="name">Role & Responsibilities</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>WHO — the AI Teammate, human owner, Remote governance</strong><br>AITM identity, role description, and Responsibilities table. Required fields: AITM Name, Assigned Skillset, AITM Owner (named human), M365/System Identity, and Remote governance plan per Responsibility. Remote governance plan is a required field — not optional.</div></div>
-      <div class="callout"><strong>AITM Owner vs Manage AI Lead:</strong> AITM Owner is the ManageAI team member who owns the AI Teammate's performance and governance. Manage AI Lead is the CSM managing the customer engagement. For the CCA, Dan holds both roles since ManageAI is our own first customer.</div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 3</span><span class="name">Current Reality & Process</span><span class="os-tag">OS: Workflow Map</span></div><div class="brief-section-body"><strong>TODAY — how work gets done now, pain points, volume</strong><br>Job Area summary table from the MAI Process Map. Step-by-step current-state process with: what happens, who does it, systems used, pain points. Triggers, volume, and current cycle time. Links to the full MAI Process Map artifact.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 4</span><span class="name">[Name]'s Workflow</span><span class="os-tag">OS: Workflow Map</span></div><div class="brief-section-body"><strong>TOMORROW — how the AI Teammate changes the work</strong><br>Step-by-step future-state workflow: what the Teammate does at each step, Skillset reference, inputs, outputs, human-in-the-loop flags, and edge cases.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 5</span><span class="name">What [Name] Does</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>HOW — Skillsets, Skills, rules, decision authority, guardrails</strong><br>Recommended Skillset Map (directional — Brian finalizes boundaries in the Training Guide). Behavioral rules. Decision Authority table: autonomous decisions, escalation paths, response SLAs. What the Teammate must never do.</div></div>
@@ -1107,7 +1106,7 @@
     <div class="callout principle"><strong>4. Prototype for clarity and excitement, not impressiveness.</strong> A rough demo that makes the customer say "wait, that's not how we do it" is worth more than a polished one that gets polite applause. The prototype creates a wow moment that builds buy-in — roughness keeps the conversation on substance, not aesthetics.</div>
     <div class="callout principle"><strong>5. Customer language, not internal jargon.</strong> If the customer calls it "the Bambi system," we call it that. Process maps, AI Workforce Visions, and Briefs use the customer's vocabulary. Internal ManageAI terminology stays internal.</div>
     <div class="callout principle"><strong>6. Checkpoints prevent confusion, not create deliverables.</strong> The Feedback Loop, Confidence Scoring, and Scope Freeze exist to keep Dan and the CCA in sync — lightweight check-ins, not heavyweight approval gates.</div>
-    <div class="callout rule"><strong>7. Outputs are non-negotiable.</strong> The conversation is flexible. The Brief, Process Map, Prototype Brief, and Build Handoff Contract are not. No output leaves without meeting its completeness standard. This principle overrides all others when an output is at stake.</div>
+    <div class="callout rule"><strong>7. Output structure is non-negotiable.</strong> Every Brief, Process Map, Prototype Brief, and Handoff Contract always ships in its defined format — all sections present, all required fields included. The structure never gets skipped or abbreviated. Completeness level within those fields is governed by Confidence Scoring and Dan's sign-off — Partial sections with human approval can move forward when timeline or customer context makes that the right call. Missing sections block handoff entirely. The format is the non-negotiable. The depth is a human judgment call.</div>
   </div>
 
   <!-- PART 5: INFRA TEMPLATE -->
@@ -1465,10 +1464,10 @@
     <h3 style="margin:1.5rem 0 .75rem;color:var(--navy)">Design principles</h3>
 
     <div class="changelog-entry">
-      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Philosophy</span><strong style="font-size:12px">7th design principle added — outputs are non-negotiable</strong></div>
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Philosophy</span><strong style="font-size:12px">7th design principle added — output structure is non-negotiable</strong></div>
       <div class="changelog-body">
         <div class="orig">Your AITM Requirements Brief Guide defined 6 design principles: Conversational not bureaucratic, Iterative not one-pass, Outcome-led not tool-led, Prototype for clarity not impressiveness, Customer language not internal jargon, Checkpoints prevent confusion. Your guide stated: "when a guideline conflicts with a principle, the principle wins."</div>
-        <div class="rationale">All 6 of your principles are preserved verbatim — they're exactly right and they prevent the CCA from becoming a compliance engine. A seventh principle is added to draw the hard line: "Outputs are non-negotiable. The conversation is flexible. The Brief, Process Map, Prototype Brief, and Build Handoff Contract are not. No output leaves without meeting its completeness standard." This principle overrides all others when an output is at stake. The conversational flexibility your principles describe applies to how we get there — not to whether the final output meets its gate.</div>
+        <div class="rationale">All 6 of your principles are preserved verbatim. A seventh principle is added to draw the right line: output structure is non-negotiable. Every Brief, Process Map, Prototype Brief, and Handoff Contract always ships in its defined format — all sections present, all required fields included. The structure never gets skipped. Completeness level within those fields is governed by Confidence Scoring and Dan's sign-off — Partial sections with human approval can move forward when timeline or customer context makes that the right call. Missing sections block handoff entirely. The format is non-negotiable. The depth is a human judgment call.</div>
       </div>
     </div>
 
@@ -1550,7 +1549,7 @@
       <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">AI Teammate email convention — [name].ai@manageai.io</strong></div>
       <div class="changelog-body">
         <div class="orig">Your docs specified charlie@manageai.io as the CCA's M365 identity.</div>
-        <div class="rationale">Updated to charlie.ai@manageai.io to establish a consistent naming convention for all AI Teammates. The .ai suffix is instantly recognizable to any recipient as indicating an AI. Standard across all AITMs going forward: proposal.ai@manageai.io, rebekha.ai@manageai.io, etc.</div>
+        <div class="rationale">Updated to charlie.ai@manageai.io to establish a consistent naming convention for all AI Teammates. The .ai suffix is instantly recognizable to any recipient as indicating an AI, without requiring knowledge of ManageAI's internal terminology. Standard across all AITMs going forward: proposal.ai@manageai.io, rebekha.ai@manageai.io, etc.</div>
       </div>
     </div>
 
