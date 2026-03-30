@@ -205,8 +205,9 @@
 <!-- SIDEBAR -->
 <nav class="sidebar">
   <div class="sidebar-section">
-    <div class="sidebar-section-title">Preamble</div>
-    <a href="#definitions" class="sidebar-link">Core Definitions</a>
+    <div class="sidebar-section-title">Operating Context</div>
+    <a href="#operating-context" class="sidebar-link">Company Strategy</a>
+    <a href="#definitions" class="sidebar-link">OS Vocabulary</a>
     <a href="#role-guide" class="sidebar-link">Role Guide</a>
   </div>
 
@@ -256,13 +257,19 @@
   <div class="sidebar-part">Part 6 — Reference</div>
   <div class="sidebar-section">
     <a href="#full-process" class="sidebar-link">Full Process at a Glance</a>
-    <a href="#sample-brief" class="sidebar-link">Sample Requirements Brief</a>
-    <a href="#sample-prototype" class="sidebar-link">Sample Prototype Brief</a>
+    <a href="#cca-workflow" class="sidebar-link">CCA Workflow (Step-by-Step)</a>
+    <a href="#sample-references" class="sidebar-link">Sample Briefs</a>
   </div>
 
   <div class="sidebar-part">Part 7 — Changelog</div>
   <div class="sidebar-section">
-    <a href="#changelog-v4" class="sidebar-link">What Changed from Your Docs</a>
+    <a href="#changelog-v4" class="sidebar-link">v4.0 — Original Docs → v4.0</a>
+    <a href="#changelog-v5" class="sidebar-link">v5.0 — Dan's Audit</a>
+  </div>
+
+  <div class="sidebar-part">Addendum</div>
+  <div class="sidebar-section">
+    <a href="#design-decisions" class="sidebar-link">Resolved Design Decisions</a>
   </div>
 </nav>
 
@@ -272,20 +279,48 @@
   <div class="doc-header">
     <div class="doc-meta">
       <span class="meta-tag internal">Internal Use</span>
-      <span class="meta-tag version">v4.0</span>
+      <span class="meta-tag version">v5.0</span>
       <span class="meta-tag date">March 2026</span>
     </div>
     <h1>Chief Customer Agent</h1>
     <p>Complete agent definition in OS format — Charter, Skillsets, Solution Alignment Playbook, Key Principles, Infra Template, and full changelog back to Dan's original v2.1.</p>
   </div>
 
-  <!-- PREAMBLE: CORE DEFINITIONS -->
+  <!-- OPERATING CONTEXT -->
+  <div class="section" id="operating-context">
+    <div class="section-header">
+      <h2>Operating Context</h2>
+      <span class="os-ref">OS: Operating Model</span>
+    </div>
+
+    <h4 style="margin:0 0 .5rem;color:var(--navy)">Company Strategy</h4>
+    <p>This agent operates within the ManageAI Operating Model. The full company vision, team structure, workflow maps, and infrastructure templates live at <a href="https://os.manageai.io" target="_blank" style="color:var(--blue);text-decoration:underline">os.manageai.io</a> — the single source of truth for all company-level objectives and decisions.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">OS Reference</th><th>What It Covers</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Operating Model</strong></td><td>Company vision, mission, AI Workforce strategy (Now / Next / Later), team structure, and the agentic org chart.</td></tr>
+          <tr><td><strong>Operating Map</strong></td><td>How teams, agents, and humans connect. Reporting lines, handoff contracts, and org-wide dependencies.</td></tr>
+          <tr><td><strong>Workflow Map</strong></td><td>End-to-end business workflows with drill-down to flow-level detail. Where each agent operates in the pipeline.</td></tr>
+          <tr><td><strong>Agent Template</strong></td><td>The standard format for all agent definitions — Charter, Skillsets, Playbook, Infra Template. This document follows that template.</td></tr>
+          <tr><td><strong>Directory</strong></td><td>Full roster of all AI Teammates, human team members, and teams across the company.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 style="margin:1.25rem 0 .5rem;color:var(--navy)">Where This Agent Fits</h4>
+    <p>The CCA is the <strong>Phase 1 anchor</strong> — the first operational AI Teammate proving the ManageAI model. It sits at the front of the customer pipeline: after the SE (Dave) runs Opportunity Assessment, the CCA takes over Solution Alignment and produces the build-ready Requirements Brief that feeds Brian's engineering team. Its success generates the structured outputs and feedback loops that enable Phase 2 automation (Rebekha running Opportunity Assessment autonomously, Build Agent deploying through automated pipelines).</p>
+    <div class="callout"><strong>OS source of truth:</strong> If the company strategy, team structure, or operating model changes, those changes happen in the OS at os.manageai.io — not in this document. This agent definition inherits company context from the OS and defines only what's specific to the CCA.</div>
+  </div>
+
+  <!-- OS VOCABULARY -->
   <div class="section" id="definitions">
     <div class="section-header">
-      <h2>Core Definitions</h2>
-      <span class="os-ref">Preamble</span>
+      <h2>OS Vocabulary</h2>
+      <span class="os-ref">OS: Operating Model</span>
     </div>
-    <p>These definitions are precise by design. Every term has a specific meaning in the ManageAI operating system. The OS is the master source of truth for all team names and structural definitions.</p>
+    <p>Standard terminology across all agent definitions. These definitions are maintained in the OS and apply to every AI Teammate, not just the CCA.</p>
     <div class="def-block">
       <div class="def-tier">Business Objective</div>
       <div class="def-question">WHY does this AITM exist?</div>
@@ -296,7 +331,7 @@
       <div class="def-tier">Responsibility</div>
       <div class="def-question">WHAT is this AITM accountable for?</div>
       <h4>Outcomes + governance</h4>
-      <p>A specific set of business outcomes the AI Teammate is accountable for delivering. Every Responsibility has a named human owner and a governance plan defined in Remote. It is the accountability contract between the AITM and the organization.</p>
+      <p>A specific set of business outcomes the AI Teammate is accountable for delivering. Every Responsibility has a named Manager and a governance plan defined in Remote. It is the accountability contract between the AI Teammate and the organization.</p>
     </div>
     <div class="def-block">
       <div class="def-tier">Skillset</div>
@@ -316,14 +351,14 @@
       <h4>Full scope of all changes — agent and infra</h4>
       <p>The complete set of changes required to make an AI Teammate function — including agent configuration, system prompt updates, knowledge base setup, tool connections, API integrations, and infrastructure template changes. Training covers the full scope of what's needed, not narrowly defined as knowledge updates or isolated component changes. It applies to any update that changes how the AITM functions.</p>
     </div>
-    <div class="callout"><strong>Hierarchy:</strong> AITM → owns <strong>Responsibilities</strong> (governed in Remote) → delivered via <strong>Skillsets</strong> → composed of <strong>Skills</strong> → enabled by <strong>Training</strong>.</div>
+    <div class="callout"><strong>Hierarchy:</strong> AI Teammate → owns <strong>Responsibilities</strong> (governed in Remote) → delivered via <strong>Skillsets</strong> → composed of <strong>Skills</strong> → enabled by <strong>Training</strong>.</div>
   </div>
 
   <!-- ROLE GUIDE -->
   <div class="section" id="role-guide">
     <div class="section-header">
       <h2>Role Guide</h2>
-      <span class="os-ref">Preamble</span>
+      <span class="os-ref">Operating Context</span>
     </div>
     <div class="table-wrap">
       <table>
@@ -358,11 +393,11 @@
       <div class="identity-field"><div class="label">Team</div><div class="value">Customer</div></div>
       <div class="identity-field"><div class="label">Version</div><div class="value">1.0</div></div>
       <div class="identity-field"><div class="label">M365 / System Identity</div><div class="value">charlie.ai@manageai.io</div></div>
-      <div class="identity-field"><div class="label">AITM Owner</div><div class="value">Dan Ray (CCO)</div></div>
+      <div class="identity-field"><div class="label">Manager</div><div class="value">Dan Ray (CCO)</div></div>
       <div class="identity-field"><div class="label">Parent Agent</div><div class="value">None — top-level agent</div></div>
     </div>
     <div class="callout">
-      <strong>AITM Owner vs Manage AI Lead:</strong> In customer deployments, AITM Owner is the ManageAI team member who owns the AI Teammate's performance and governance. Manage AI Lead is the CSM managing the customer engagement. For the CCA, Dan holds both roles since ManageAI is our own first customer.
+      <strong>Manager vs Manage AI Lead:</strong> In customer deployments, the Manager is the human who manages the AI Teammate's performance and governance. Manage AI Lead is the CSM managing the customer engagement. For the CCA, Dan holds both roles since ManageAI is our own first customer.
     </div>
     <p>charlie.ai@manageai.io has M365 access scoped to the Customer team — Teams channels, calendar access for meeting prep, SharePoint for customer materials. Follows the same access principles as a human team member in the same role.</p>
   </div>
@@ -403,8 +438,7 @@
         <thead><tr><th>Skill</th><th>Trigger</th><th>Output</th><th>Priority</th><th>Skillset</th></tr></thead>
         <tbody>
           <tr><td><strong>Feasibility Gate</strong></td><td>SE handoff received</td><td>Feasibility Report (Go/Blocker/Needs Info per Theme)</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
-          <tr><td><strong>Opp Roadmap Builder</strong></td><td>Gate clearance / update</td><td>Phased Outcome Roadmap</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
-          <tr><td><strong>AI Workforce Vision Builder</strong></td><td>Progressive (3 passes)</td><td>Now/Next/Later Vision</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
+          <tr><td><strong>AI Workforce Roadmap Builder</strong></td><td>Gate clearance / update / progressive (3 passes)</td><td>Phased Outcome Roadmap + Now/Next/Later Vision (Phase 1/2/3 for customers)</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
           <tr><td><strong>Process Mapper</strong></td><td>CCA recommends for clarity</td><td>6-swimlane Process Map + JSON export</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
           <tr><td><strong>Prototype Readiness</strong></td><td>Before Prototype Brief fires</td><td>Readiness check + gap list</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
           <tr><td><strong>Prototype Briefer</strong></td><td>CCA recommends / readiness passes</td><td>One-page Prototype Brief → Dan → Brian</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
@@ -413,7 +447,7 @@
           <tr><td><strong>Listening & Capture</strong></td><td>Every conversation</td><td>Progressive Brief updates + confidence scores</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
           <tr><td><strong>Confidence Scoring</strong></td><td>Ongoing</td><td>Section confidence scores (Complete/Partial/Missing)</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
           <tr><td><strong>Scoping</strong></td><td>Progressive through alignment</td><td>AITM Requirements Brief (7 sections)</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
-          <tr><td><strong>Scope Freeze Check</strong></td><td>Before handoff to Build team</td><td>Section-by-section completeness audit</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
+          <tr><td><strong>Requirements Scope Freeze</strong></td><td>Before handoff to Build team</td><td>Section-by-section completeness audit</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
           <tr><td><strong>Feedback Loop</strong></td><td>Every human touchpoint</td><td>Confirmed decisions posted to Dan</td><td><span class="badge badge-p0">P0</span></td><td>Solution Alignment</td></tr>
           <tr><td><strong>Technical Readiness Capture</strong></td><td>During alignment conversations</td><td>Tech context for Jacob's handoff package</td><td><span class="badge badge-p1">P1</span></td><td>Solution Alignment</td></tr>
           <tr><td><strong>Meeting Prep</strong></td><td>30 min before calendar event</td><td>Pre-meeting briefing posted to Dan</td><td><span class="badge badge-p1">P1</span></td><td>Solution Alignment</td></tr>
@@ -514,6 +548,24 @@
         </tbody>
       </table>
     </div>
+    <h4>SE Handoff Input Contract (Upstream)</h4>
+    <p>The CCA expects the following minimum fields per Opportunity Theme when the SE hands off. This contract defines what the CCA needs to operate — the Opportunity Assessment Guide (when created) will define how the SE produces it.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Field</th><th>What CCA Needs</th><th>If Missing</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Theme Name</strong></td><td>Clear, descriptive name for the Opportunity Theme.</td><td>CCA cannot create Notion record. Blocker.</td></tr>
+          <tr><td><strong>Business Objective</strong></td><td>What business outcome this Theme addresses. In customer language.</td><td>CCA creates [NEEDS] placeholder. Feasibility still runs but Roadmap sequencing is weakened.</td></tr>
+          <tr><td><strong>Pain Points</strong></td><td>Specific pain described by the customer during discovery. Quotes preferred.</td><td>CCA flags for follow-up in first alignment session.</td></tr>
+          <tr><td><strong>Business Area</strong></td><td>Department or function where this Theme lives.</td><td>CCA infers from context if possible, flags if ambiguous.</td></tr>
+          <tr><td><strong>2×2 Scores</strong></td><td>Impact (H/M/L) and Complexity (H/M/L) from the Opportunity Assessment scoring exercise.</td><td>CCA cannot build initial Roadmap sequencing. Blocks Stage 2 until resolved.</td></tr>
+          <tr><td><strong>Key Stakeholders</strong></td><td>Names and titles of people involved in discovery. At minimum: who owns this workflow today.</td><td>Feasibility Question #2 fails (stakeholder not identified).</td></tr>
+          <tr><td><strong>Source Context</strong></td><td>Link to discovery transcript(s), SE notes, or email thread. Enough for CCA to understand context without attending the call.</td><td>CCA operates with thin context. Gap Report will be heavy after first session.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><strong>Interim standard:</strong> This table serves as the interim handoff standard until the Opportunity Assessment Guide is formalized by the SE team. When that Guide is created, it should produce output that satisfies this contract.</div>
+
     <h4>The Build Team May Ask For</h4>
     <div class="table-wrap">
       <table>
@@ -659,6 +711,218 @@
         </div>
       </div>
     </div>
+
+    <h3 style="margin:1.5rem 0 .5rem;color:var(--navy)">Skill Detail Blocks by Job Area</h3>
+    <p>Rich per-skill definitions including business context (Current Pain), operational rules (Key Rules), specific inputs, and Opportunity Tracker references. These are the detailed requirements Brian's team needs to understand not just what to build, but <em>why</em>.</p>
+
+    <!-- JOB AREA 1: FEASIBILITY CHECK -->
+    <h4 style="margin:1.25rem 0 .5rem;color:var(--blue)">Job Area 1: Feasibility Check</h4>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Feasibility Gate</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Evaluates whether an Opportunity Theme is viable for Alignment before any time is invested. Runs a structured checklist against the SE's handoff data, flags blockers, and produces a Go/No-go recommendation per Theme.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>SE (Dave) completes Opportunity Assessment and hands off prioritized Themes to the CCA via Notion Opportunity Tracker record.</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Notion Opportunity Tracker record per Theme (Theme Name, Business Objective, Pain Points, Business Area, 2×2 scores, Stakeholders, Source). Discovery call transcript(s). SE notes/email if available.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Feasibility Report per Theme: Go (proceed to Roadmap) / Blocker (specific blocker identified, recommended resolution or deprioritize) / Needs Info (specific questions to resolve before decision). Posted to Customer Channel, tagged to Dan.</td></tr>
+          <tr><td><strong>Current Pain</strong></td><td>Feasibility blockers are often invisible until deep in Alignment — system access, security reviews, or data residency surface late. SE handoff quality varies: some are rich, others are sparse notes requiring follow-up. Time is wasted on Themes that were never viable.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Must complete within 24 hours of handoff. 6 feasibility questions: (1) Access to core system confirmed? (2) Customer stakeholder identified and available? (3) Data exists and is exportable? (4) No known security/compliance blockers? (5) Business objective clear enough to map? (6) Timeline expectation realistic? Any "No" = Blocker.</td></tr>
+          <tr><td><strong>Opp Tracker Reference</strong></td><td>Each Theme entering Feasibility has a record in the Opportunity Tracker at Level: Theme, Stage: Identified. Stage updates to Feasibility Passed or Blocked after Gate completes.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- JOB AREA 2: ROADMAP & VISION -->
+    <h4 style="margin:1.25rem 0 .5rem;color:var(--blue)">Job Area 2: Roadmap & Vision</h4>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>AI Workforce Roadmap Builder</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Constructs and maintains a phased Opportunity Roadmap per customer plus the AI Workforce Vision — the executive-facing narrative that frames the entire engagement. The Roadmap sequences what we work on and in what order. The Vision communicates that sequence as a three-phase strategy written in the customer's language. Internally the phases are <strong>Now / Next / Later</strong> (sequenced by dependency and readiness, no dates). For customer communication Dan presents them as <strong>Phase 1 / Phase 2 / Phase 3</strong>. Initially Theme-level (using 2×2 scores), progressively refined to Opportunity-level (using Priority Scores after Signal Synthesis). The Vision is refined across three passes during Alignment.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>Initial Build: Feasibility Gate clearance for a batch of Themes. Refinement: Signal Synthesis defines new Opportunities (Stage 4). Vision Pass 1 (Stage 2): After Initial Roadmap is built. Vision Pass 2 (Stage 4): After Signal Synthesis defines Opportunities. Vision Pass 3 (Stage 6): After prototype validation, before Engineering Handoff. Also triggered by any change that affects sequencing (new Theme added, priority shift, blocker resolved).</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Feasibility Reports (from Gate). 2×2 Impact/Complexity scores per Theme. Priority Scores per Opportunity (after Stage 4). Customer context from alignment sessions. Discovery call transcripts (customer's own words about goals). Prototype results (for Vision Pass 3). Industry context. Existing Roadmap (for refinement).</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Opportunity Roadmap: phased sequence with rationale. Initially Theme-level, evolves to Opportunity-level. AI Workforce Vision: Now (Phase 1) = what we're building now and quick wins; Next (Phase 2) = what opens up next; Later (Phase 3) = full AI-embedded future. Vision becomes Section 1 of the AITM Requirements Brief and is handed to Sales for the proposal. Roadmap posted to Customer Channel for Dan's review and updated in Customer Dossier.</td></tr>
+          <tr><td><strong>Current Pain</strong></td><td>Customers want everything at once. Complexity hard to assess without discovery. No systematic way to sequence — sequencing today is gut feel during a call. No strategic narrative framing — proposals present tactical deliverables without connecting them to a bigger picture. Customers can't see the trajectory, making Phase 2+ expansion harder to sell.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Two Roadmap modes: Initial Build (Theme-level, 2×2 scores, customer-collaborative) and Refinement (Opportunity-level, Priority Scores, CCA-driven with Dan review). Roadmap must always show what's current phase vs. what's coming. Updated within 48 hours of any change. Vision uses customer language, not MAI jargon. Frame each phase in business outcomes ("reduce turnaround from 5 days to same-day"), not technical capabilities ("deploy RAG pipeline"). An executive should read Section 1 alone and understand the engagement.</td></tr>
+          <tr><td><strong>Opp Tracker Reference</strong></td><td>The Roadmap IS the Opportunity Tracker's sequenced view. Each Theme/Opportunity in the Tracker has a Roadmap Phase field. The "Opportunity Themes" and "By Customer" views in Notion surface this.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- JOB AREA 3: PROCESS MAPPING & PROTOTYPING -->
+    <h4 style="margin:1.25rem 0 .5rem;color:var(--blue)">Job Area 3: Process Mapping & Prototyping</h4>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Process Mapper</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Builds structured 6-swimlane process maps from alignment session transcripts following the MAI Process Map methodology (per the Process Map Guide). Maps the customer's current-state workflow: Job Areas, Job Steps, Systems/Assets, Desired Outcomes, Challenges, and How AI Can Help.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>An Opportunity Theme enters the Alignment Loop (cleared Feasibility, sequenced on Roadmap). Dan runs an alignment session with the customer; CCA works from the transcript after.</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Alignment session transcripts (Teams). Discovery call transcripts. Existing customer context from the Dossier. Process Map Guide (methodology reference). MAI Process Mapper JSON schema (for export).</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>MAI Process Map per Opportunity Theme (JSON export + visual in Process Mapper app). Opportunity Signals captured in the "Listen For" swimlane. Gap Report (thin-evidence areas that need follow-up). Posted to Customer Channel.</td></tr>
+          <tr><td><strong>Current Pain</strong></td><td>Transcripts must be manually exported from Teams. Dan uses ChatGPT with a basic prompt to organize process flow, then manually refines in Miro for 2–4 hours. Output doesn't match template. Information from multiple sessions isn't automatically connected.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Map reality, not aspiration. Use customer language for tool names and terminology. Include metrics from transcripts. Don't invent pain points. Expect 2–3 passes per map. Follow Process Map Guide for quality standards. JSON must pass validation before posting.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Gap Identification</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>After each alignment session, identifies what's still missing from the process map and scope. Produces a structured Gap Report listing specific information needed, who can provide it, and recommended follow-up questions for the next session.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>After each alignment session transcript is processed. After Process Mapper updates the map.</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Updated process map. Alignment session transcript. Current AITM Requirements Brief (in-progress sections). Confidence scores per section.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Gap Report: list of specific gaps (not vague "need more info" — specific: "Section 3 missing: who reviews proposals >$500K and what's their typical turnaround?"). Follow-up questions for next session. Posted to Customer Channel.</td></tr>
+          <tr><td><strong>Current Pain</strong></td><td>Scope gaps persist across sessions because nobody tracks which specific pieces of information are still missing. Same questions get asked multiple times. Context gets lost between sessions.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Every gap must be specific and actionable. "Need more info on workflow" is not acceptable. "Step 3 unclear: does Justin review all proposals or only >$500K?" is acceptable. Gaps feed directly into the next session's agenda.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Signal Synthesis</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Takes the raw Opportunity Signals captured during Process Mapping and synthesizes them into formally defined Opportunities with full attributes and Priority Scores. This is where Themes decompose into specific, actionable Opportunities.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>Process Mapping is complete (or substantially complete) for an Opportunity Theme. Sufficient Signals have been captured to define at least one Opportunity.</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Process map with Opportunity Signals in the "Listen For" swimlane. Challenge/How AI Helps pairs from the map. Customer context from sessions. Opportunity Definition Framework (for scoring methodology).</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Defined Opportunities: each with Name, Description, Parent Theme, Business Value factors (H/M/L), Implementation Readiness factors (G/Y/R), calculated Priority Score. Created as records in the Notion Opportunity Tracker at Level: Opportunity.</td></tr>
+          <tr><td><strong>Current Pain</strong></td><td>No systematic way to go from "we noticed this pain point" to "this is a defined Opportunity with a score." Signals get lost in transcripts. Grouping is ad hoc.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Every Opportunity must trace back to at least one Signal from the process map. Priority Score uses the Opportunity Definition Framework methodology. CCA recommends groupings; Dan confirms. Scoring calibration: start with defaults, revisit after 3–4 customers.</td></tr>
+          <tr><td><strong>Opp Tracker Reference</strong></td><td>Each synthesized Opportunity becomes a new Notion record: Level = Opportunity, Parent Theme = linked, Stage = Scored. Priority Score fields populated.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Prototype Readiness Check</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Runs 5 gut-check questions before a Prototype Brief goes to Brian, ensuring the prototype will generate useful customer reactions rather than wasting a build cycle.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>Signal Synthesis confirmed and Dan has approved the first Opportunity for prototyping.</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Process map. Defined Opportunity being targeted. Available customer data/samples. Stakeholder availability.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Readiness assessment: each of 5 questions answered with evidence. If all pass, triggers Prototype Briefer. If gaps, specific actions to close them before proceeding.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>5 questions: (1) Core workflow clear enough to demo? (2) Real customer data available? (3) Know what 'good' looks like? (4) Key integration feasible? (5) Reviewer available within 1 week? A "No" doesn't kill the prototype — it means push on that gap first. Per Prototype Brief Guide.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Prototype Briefer</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Assembles a one-page Prototype Brief from all captured alignment context. The Brief gives Brian exactly enough to build a working demo the customer can react to. Follows the Prototype Brief Guide structure: Section A (What We're Testing) + Section B (Context for Build).</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>Prototype Readiness Check passes (or Dan overrides specific gaps that don't block the prototype).</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>All alignment context: process map, Opportunity definition, discovery transcripts, available customer data/samples, quality references, known constraints.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>One-page Prototype Brief with: AITM Name, Customer, Core Skillset Being Tested (ONE), Key Integration (ONE), What Customer Should React To, Context from Discovery, Available Data, Quality Reference, Known Constraints, Open Questions, Reviewer + Timeline. Posted to Customer Channel, tagged to Dan.</td></tr>
+          <tr><td><strong>Current Pain</strong></td><td>Today Dan manually assembles a prompt with transcripts and templates. Context is piecemealed. Brian sometimes builds against vague direction because the brief isn't structured.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>ONE core capability. ONE integration. 3–5 days max build. Rough by design. Built to validate, not to ship. CCA never sends directly to Brian — Dan reviews via Feedback Loop first. Per Prototype Brief Guide constraints.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- JOB AREA 4: SCOPE COMPLETION & HANDOFF -->
+    <h4 style="margin:1.25rem 0 .5rem;color:var(--blue)">Job Area 4: Scope Completion & Handoff</h4>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Scoping</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Progressively compiles all captured context into the 7-section AITM Requirements Brief (per the AITM Requirements Brief Guide). This is the primary deliverable — the business requirements document that defines WHAT needs to be built and WHY. Scoping happens throughout Alignment, not just at the end.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>Progressive: begins populating sections as information becomes available during Stages 2–5. Final assembly at Stage 6.</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>AI Workforce Vision (from AI Workforce Roadmap Builder). Process map + Job Area summaries. Recommended Skillset Map. Prototype results and customer feedback. Gap Reports. All alignment session transcripts.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>AITM Requirements Brief (7 sections): §1 AI Vision, §2 Role & Responsibilities, §3 Current Reality & Process, §4 What AITM Does, §5 Knowledge & Data, §6 [AITM] Workflow, §7 How We Know It's Ready. Per AITM Requirements Brief Guide.</td></tr>
+          <tr><td><strong>Current Pain</strong></td><td>Dan uses ChatGPT with manually assembled prompts and templates. Quality depends on what's manually uploaded. No systematic completeness tracking. Assumed information sneaks into scope docs when context is thin.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Never insert assumed information — use [NEEDS: specific item] placeholders. Every section must reach "Complete" confidence before Business Requirements Scope Freeze. The Brief is a living artifact throughout Alignment, not a one-shot output.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Confidence Scoring</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Maintains a confidence score (Complete / Partial / Missing) for each of the 7 AITM Requirements Brief sections. Surfaces exactly what's missing and what's confirmed. Prevents handoff of incomplete Briefs.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>Ongoing during Scoping. Formally evaluated before Business Requirements Scope Freeze.</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Current state of each AITM Requirements Brief section. Gap Reports. Dan's confirmations from Feedback Loop.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Section-by-section confidence scores. For Partial/Missing sections: specific items needed and recommended actions to get them. Readiness check result: can we freeze or not?</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Complete = fully defined, confirmed, no gaps. Partial = some info captured, specific gaps remain. Missing = critical info not captured, section can't support engineering. ALL seven sections must reach Complete before Engineering Handoff. Hard rule.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CROSS-CUTTING SKILLSETS -->
+    <h4 style="margin:1.25rem 0 .5rem;color:var(--blue)">Cross-Cutting Skillsets</h4>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Feedback Loop</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Standardized protocol that activates at every Human Team Member (HTM) touchpoint. Ensures Dan always knows what the CCA produced, what it plans to update, and what it wants to do next — and that the CCA never proceeds without explicit confirmation.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>Every step in the CCA Workflow (§6) that is marked "HTM = Yes." This is every output that Dan must review before the CCA proceeds.</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>The output the CCA just produced (e.g., Feasibility Report, Roadmap draft, Prototype Brief, Gap Report). The CCA's planned next actions.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Dan's confirmed decisions, corrections, and feedback. Updated artifacts reflecting Dan's input. Trigger for the confirmed next step.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>7-step protocol: (1) Replay what was produced. (2) State planned doc updates. (3) State planned next step. (4) Wait — do NOT proceed until Dan explicitly confirms. (5) Capture feedback, corrections, decisions. (6) Update relevant artifacts. (7) Trigger confirmed next step. NEVER auto-advance past a checkpoint. NEVER interpret silence as approval.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Listening & Capture</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Continuously monitors all incoming data (transcripts, chats, emails, documents) for information relevant to active customer engagements. Extracts, structures, and stores this information in the Customer Dossier and related artifacts.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>Any new data: meeting transcript available, chat message in customer channel, email received, document uploaded to customer folder, calendar event change.</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Teams meeting transcripts. Teams chat messages (customer channels + internal). Outlook emails (customer correspondence). SharePoint/OneDrive documents (customer folders). Calendar events.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Updated Customer Dossier fields. Updated process map (if relevant). New Opportunity Signals (if identified). Updated AITM Brief sections (if relevant). Flagged items for Dan's review.</td></tr>
+          <tr><td><strong>Current Pain</strong></td><td>Customer information is scattered across transcripts, chats, and OneDrive. Only available to meeting organizer unless shared. People chase permissions. Information is unstructured and doesn't connect unless naming is perfectly consistent.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Distinguish "Core Truth" (structured data Dan must approve changes to: Notion records, company positioning, guardrails, AITM definitions) from "Working Truth" (data the CCA updates automatically with oversight: Opportunities, low-level SOPs, knowledge graph). Never overwrite Core Truth without Dan's confirmation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Meeting Prep</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>Prepares a pre-meeting briefing 30 minutes before any scheduled alignment or customer-related meeting. Pulls the latest context from the Customer Dossier, Gap Reports, and open items so Dan walks into every meeting with current intelligence.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>Calendar event with customer stakeholder(s) detected, 30 minutes before start time.</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Customer Dossier. Latest Gap Report. Open Decisions/Blockers. Recent chat/email activity. Previous meeting action items.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Pre-meeting briefing: customer context summary, open items to address, specific questions to ask (from Gap Report), what's changed since last session, recommended agenda priorities.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Must be ready 30 minutes before meeting. Scannable format (not a wall of text). Prioritize: what does Dan need to know that's changed since the last interaction?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Action Item Capture</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>After every meeting transcript is available, extracts action items, decisions, commitments, and next steps into a structured summary. Tags owners and due dates where stated.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>Meeting transcript becomes available (Teams recording processed).</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Meeting transcript. Attendee list. Existing action items from previous sessions.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Structured summary: action items (who, what, when), decisions made, commitments given, next steps. Posted to Customer Channel. Open items added to Customer Dossier.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Distinguish confirmed commitments from ideas discussed. Tag Dan for review within 2 hours. Update existing action items (resolved, changed, still open).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:160px">Field</th><th>Technical Readiness</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Description</strong></td><td>During alignment sessions, captures technical context that Jacob needs for infrastructure planning — API availability, authentication methods, data formats, system versions — without requiring a dedicated technical discovery session.</td></tr>
+          <tr><td><strong>Trigger</strong></td><td>During alignment conversations when technical details surface naturally (system names, data formats, API mentions, security requirements).</td></tr>
+          <tr><td><strong>Inputs</strong></td><td>Alignment session transcripts. Customer's system mentions. Integration discussions.</td></tr>
+          <tr><td><strong>Outputs</strong></td><td>Technical context summary for Jacob: systems identified, API availability (confirmed/unknown), authentication methods mentioned, data format notes, security/compliance requirements surfaced. Updated in Customer Dossier "Systems & Data" field.</td></tr>
+          <tr><td><strong>Key Rules</strong></td><td>Capture what's mentioned naturally — don't probe the customer for technical details (that's Jacob's job in a separate session). Mark everything as "surfaced in conversation" vs. "confirmed by technical contact."</td></tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 
   <!-- 2.2 CUSTOMER DOSSIER -->
@@ -780,7 +1044,7 @@
 
     <div class="subsection">
       <h3>Feasibility Gate</h3>
-      <p>Before Alignment begins on any AI Teammate — regardless of trigger — the CCA runs a five-question feasibility check.</p>
+      <p>Before Alignment begins on any AI Teammate — regardless of trigger — the CCA runs a six-question feasibility check.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Question</th><th>Signal to Watch For</th></tr></thead>
@@ -790,6 +1054,7 @@
             <tr><td><strong>Is the process stable?</strong></td><td>The workflow isn't in the middle of being redesigned. Automating a moving target wastes everyone's time.</td></tr>
             <tr><td><strong>Is a stakeholder available?</strong></td><td>Someone who actually does this work today can participate. If the workflow owner can't make time, the scope will be guesswork.</td></tr>
             <tr><td><strong>Is the outcome measurable?</strong></td><td>There's a clear before/after metric. If no one can define success, the Teammate will never feel done.</td></tr>
+            <tr><td><strong>Is the timeline expectation realistic?</strong></td><td>The customer's expected delivery timeline is achievable given the scope. Unrealistic timeline pressure distorts scope decisions.</td></tr>
           </tbody>
         </table>
       </div>
@@ -977,7 +1242,7 @@
       <p>The primary deliverable of Solution Alignment. The CCA produces this progressively through the Alignment Loop. Written in natural language — the way you'd brief a new employee. Brian's team interprets it into the Skillset Training Guide.</p>
       <div class="callout"><strong>Separation of concerns:</strong> The Brief defines the WHAT and WHY. Brian's team creates the Skillset Training Guide (the HOW). Brief is readable by Dan, customers, and Sales — not just Brian.</div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 1</span><span class="name">AI Workforce Vision</span><span class="os-tag">OS: Operating Model</span></div><div class="brief-section-body"><strong>WHY — strategy, Now/Next/Later roadmap</strong><br>Company context, key stakeholders, and the three-bucket AI workforce strategy. No dates or timelines. An executive should read this section alone and understand where the engagement is going.</div></div>
-      <div class="brief-section"><div class="brief-section-header"><span class="num">Section 2</span><span class="name">Role & Responsibilities</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>WHO — the AI Teammate, human owner, Remote governance</strong><br>AITM identity, role description, and Responsibilities table. Required fields: AITM Name, Assigned Skillset, AITM Owner (named human), M365/System Identity, and Remote governance plan per Responsibility. Remote governance plan is a required field — not optional.</div></div>
+      <div class="brief-section"><div class="brief-section-header"><span class="num">Section 2</span><span class="name">Role & Responsibilities</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>WHO — the AI Teammate, Manager, Remote governance</strong><br>AITM identity, role description, and Responsibilities table. Required fields: AITM Name, Assigned Skillset, Manager (named human), M365/System Identity, and Remote governance plan per Responsibility. Remote governance plan is a required field — not optional.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 3</span><span class="name">Current Reality & Process</span><span class="os-tag">OS: Workflow Map</span></div><div class="brief-section-body"><strong>TODAY — how work gets done now, pain points, volume</strong><br>Job Area summary table from the MAI Process Map. Step-by-step current-state process with: what happens, who does it, systems used, pain points. Triggers, volume, and current cycle time. Links to the full MAI Process Map artifact.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 4</span><span class="name">[Name]'s Workflow</span><span class="os-tag">OS: Workflow Map</span></div><div class="brief-section-body"><strong>TOMORROW — how the AI Teammate changes the work</strong><br>Step-by-step future-state workflow: what the Teammate does at each step, Skillset reference, inputs, outputs, human-in-the-loop flags, and edge cases.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 5</span><span class="name">What [Name] Does</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>HOW — Skillsets, Skills, rules, decision authority, guardrails</strong><br>Recommended Skillset Map (directional — Brian finalizes boundaries in the Training Guide). Behavioral rules. Decision Authority table: autonomous decisions, escalation paths, response SLAs. What the Teammate must never do.</div></div>
@@ -1216,7 +1481,7 @@
   <div class="part-divider" id="part6">
     <span class="part-num">Part 6</span>
     <h2>Reference</h2>
-    <span class="part-sub">Full Process · Samples</span>
+    <span class="part-sub">Full Process · CCA Workflow · Guide References</span>
   </div>
 
   <div class="section" id="full-process">
@@ -1226,7 +1491,7 @@
         <thead><tr><th>Phase</th><th>Owner</th><th>Activity</th><th>Customer Feels</th><th>Internal Output</th></tr></thead>
         <tbody>
           <tr><td><strong>Opportunity Assessment</strong></td><td>SE (Dave)</td><td>Broad conversation about business problems. Surfaces 8–15 raw problem statements, selects top 2 Themes.</td><td>Collaborative, strategic</td><td>Prioritized Themes + raw opportunity list</td></tr>
-          <tr><td><strong>Feasibility Check</strong></td><td>CCA</td><td>Five-question gut check per Theme. Go/Blocker/Needs Info disposition.</td><td>Invisible to customer</td><td>Feasibility Report</td></tr>
+          <tr><td><strong>Feasibility Check</strong></td><td>CCA</td><td>Six-question gut check per Theme. Go/Blocker/Needs Info disposition.</td><td>Invisible to customer</td><td>Feasibility Report</td></tr>
           <tr><td><strong>Roadmap & Vision</strong></td><td>CCA + Dan</td><td>Organize cleared Themes into Outcome Roadmap. Draft AI Workforce Vision (Now/Next/Later).</td><td>Sees a clear plan in the proposal</td><td>Outcome Roadmap + AI Workforce Vision</td></tr>
           <tr><td><strong>Prototype (default first move)</strong></td><td>CCA + Brian</td><td>CCA assembles Prototype Brief immediately. Brian builds in 3–5 days. Dan presents.</td><td>Excited — sees something real fast</td><td>Prototype Brief + working demo</td></tr>
           <tr><td><strong>Customer Reacts</strong></td><td>Dan + Customer</td><td>Customer reacts to prototype. CCA captures every signal.</td><td>Engaged, providing feedback</td><td>Prototype feedback → refined scope</td></tr>
@@ -1242,49 +1507,53 @@
     <p style="font-size:13px;color:var(--gray-600)">The entire process from first SE conversation to build-ready scope typically runs <strong>2–8 weeks per AI Teammate</strong>. Simpler Teammates with early prototyping can be scoped in as little as one week.</p>
   </div>
 
-  <div class="section" id="sample-brief">
-    <div class="section-header"><h2>Sample Requirements Brief — Cornerstone GC</h2></div>
-    <p>A fully worked example showing what a complete Brief looks like when ready for Build handoff.</p>
-    <div class="brief-section"><div class="brief-section-header"><span class="num">Section 1</span><span class="name">AI Workforce Vision</span><span class="os-tag">OS: Operating Model</span></div><div class="brief-section-body"><strong>Company:</strong> Cornerstone General Contractors (~$150M revenue, Alaska)<br><strong>Stakeholders:</strong> Justin McVaney (VP Preconstruction), Joe Jolley (Internal Champion), Nikolas<br><br><strong>Now:</strong> Eliminate the manual proposal bottleneck. Cornerstone's preconstruction team spends 3–5 days per proposal doing work that should take hours. The Proposal Drafter AI Teammate changes that — same-day turnaround, consistent quality, every time.<br><br><strong>Next:</strong> Once the Proposal Drafter proves the model, Resume Matching becomes possible — pulling qualified subcontractor profiles against RFP requirements automatically.<br><br><strong>Later:</strong> A fully AI-enabled preconstruction operation — from RFP intake through proposal delivery, qualification tracking, and project data consolidation across Procore and Sage Intacct.</div></div>
-    <div class="brief-section"><div class="brief-section-header"><span class="num">Section 2</span><span class="name">Role & Responsibilities</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>AITM Name:</strong> Proposal Drafter &nbsp;|&nbsp; <strong>AITM Owner:</strong> Joe Jolley &nbsp;|&nbsp; <strong>Manage AI Lead:</strong> Dan &nbsp;|&nbsp; <strong>Remote Governance:</strong> Weekly review with Joe, Dan owns escalation path<br><br><strong>Mission:</strong> Generate first-draft construction proposals by pulling project data from Procore, referencing past winning proposals in SharePoint, and applying Cornerstone's standard templates. Reduce proposal turnaround from 5 business days to same-day and ensure consistent formatting across all project managers.<br><br><strong>Success Metrics:</strong> Proposal drafts delivered within 4 hours (90%). Fewer than 15% require major revisions. All drafts include complete fee schedules from current rate data. Win rate maintained or improved.</div></div>
-    <div class="brief-section"><div class="brief-section-header"><span class="num">Section 3</span><span class="name">Current Reality & Process</span><span class="os-tag">OS: Workflow Map</span></div><div class="brief-section-body">
-      <div class="table-wrap" style="margin:0"><table><thead><tr><th>Step</th><th>What Happens</th><th>Who</th><th>Systems</th><th>Pain Points</th></tr></thead><tbody>
-        <tr><td>1</td><td>RFP arrives via email</td><td>PM / Estimator</td><td>Outlook</td><td>No central intake — RFPs buried in inboxes</td></tr>
-        <tr><td>2</td><td>PM reads RFP, identifies scope</td><td>PM</td><td>Manual</td><td>Inconsistent interpretation across PMs</td></tr>
-        <tr><td>3</td><td>Estimator searches comparable past proposals</td><td>Estimator</td><td>SharePoint, personal files</td><td>Manual, unreliable; relies on memory</td></tr>
-        <tr><td>4</td><td>Pull project data and cost history</td><td>Estimator</td><td>Procore, Sage Intacct</td><td>Two systems, manual extraction</td></tr>
-        <tr><td>5</td><td>Draft proposal using Word template</td><td>Estimator</td><td>Word, Excel</td><td>Highly manual; inconsistent style</td></tr>
-        <tr><td>6</td><td>PM reviews, requests revisions</td><td>PM</td><td>Email, Word</td><td>1–2 revision cycles, each taking a day</td></tr>
-        <tr><td>7</td><td>VP Preconstruction approves (&gt;$500K)</td><td>Justin McVaney</td><td>Email</td><td>Bottleneck; batched reviews</td></tr>
-        <tr><td>8</td><td>Final proposal sent to client</td><td>PM</td><td>Outlook / Portal</td><td>Occasional formatting errors</td></tr>
-      </tbody></table></div>
-      <p style="margin-top:.6rem;font-size:12px;color:var(--gray-500)"><strong>Volume:</strong> 8–12 proposals/month &nbsp;|&nbsp; <strong>Cycle Time:</strong> 3–5 business days</p>
-    </div></div>
-    <div class="brief-section"><div class="brief-section-header"><span class="num">Sections 4–7</span><span class="name">Workflow · What It Does · Knowledge & Systems · Acceptance</span><span class="os-tag">Full Brief</span></div><div class="brief-section-body">The full v4.0 Brief includes complete Section 4 (Proposal Drafter's Workflow — 7 steps with edge cases and human-in-loop flags), Section 5 (Skillsets: Draft Generation P0, Comparable Retrieval P0, RFP Parsing P0, Cost Data Assembly P1, Quality Check P1, Resume Matching P2 — Phase 2), Section 6 (Knowledge & Systems — Procore REST API, Sage Intacct REST API, SharePoint Graph API, Outlook Graph API), and Section 7 (Acceptance Criteria — 7 test cases with pass conditions and post-launch monitoring plan).</div></div>
+  <div class="section" id="cca-workflow">
+    <div class="section-header"><h2>CCA Workflow — Step-by-Step</h2></div>
+    <p>Operational step-by-step workflow showing exactly what the CCA does, which Skill fires at each step, what goes in, what comes out, and where Dan must confirm before the CCA proceeds. Distinct from the customer-facing "Process at a Glance" above — this is the internal execution reference.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:30px">#</th><th>CCA Action</th><th>Skill</th><th>Input</th><th>Output</th><th style="width:100px">HTM?</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Receive SE handoff</td><td>Listening & Capture</td><td>Theme list + 2×2 scores</td><td>Notion records created</td><td>No</td></tr>
+          <tr><td>2</td><td>Run Feasibility Gate</td><td>Feasibility Gate</td><td>Themes + context</td><td>Feasibility Report</td><td>Yes — Dan</td></tr>
+          <tr><td>3</td><td>Build Initial Roadmap + Draft Vision</td><td>AI Workforce Roadmap Builder</td><td>Cleared Themes</td><td>Theme-level Roadmap + Vision first draft (Now/Next/Later)</td><td>Yes — Dan</td></tr>
+          <tr><td>4</td><td>Map workflow</td><td>Process Mapper</td><td>Session transcripts</td><td>6-swimlane map</td><td>Dan runs sessions</td></tr>
+          <tr><td>5</td><td>Identify gaps</td><td>Gap Identification</td><td>Process map</td><td>Gap Report</td><td>Yes — Dan</td></tr>
+          <tr><td>6</td><td>Synthesize Signals → Opportunities</td><td>Signal Synthesis</td><td>Signals from map</td><td>Defined Opportunities + Priority Scores</td><td>Yes — Dan</td></tr>
+          <tr><td>7</td><td>Refine Roadmap + Vision</td><td>AI Workforce Roadmap Builder</td><td>New Opportunities</td><td>Refined Roadmap + refined Vision</td><td>Yes — Dan</td></tr>
+          <tr><td>8</td><td>Prototype Readiness</td><td>Prototype Readiness</td><td>Map + Opportunities</td><td>Readiness check</td><td>Yes — Dan</td></tr>
+          <tr><td>9</td><td>Assemble Prototype Brief</td><td>Prototype Briefer</td><td>Alignment context</td><td>Brief → Dan → Brian</td><td>Yes — Dan forwards</td></tr>
+          <tr><td>10</td><td>Capture prototype feedback</td><td>Listening & Capture</td><td>Customer reactions</td><td>Updated requirements</td><td>Dan presents</td></tr>
+          <tr><td>11</td><td>Assemble AITM Requirements Brief</td><td>Scoping + Confidence Scoring</td><td>All context</td><td>7-section Brief</td><td>Yes — Dan</td></tr>
+          <tr><td>12</td><td>Polish Vision (Pass 3)</td><td>AI Workforce Roadmap Builder</td><td>Prototype results</td><td>Final Vision</td><td>Yes — Dan</td></tr>
+          <tr><td>13</td><td>Requirements Scope Freeze</td><td>Requirements Scope Freeze</td><td>7-section Brief</td><td>All sections = Complete</td><td>Yes — Dan confirms</td></tr>
+          <tr><td>14</td><td>Engineering Handoff</td><td>Scoping</td><td>Frozen Brief</td><td>Brief → Brian + Jacob</td><td>Dan delivers</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout rule"><strong>Prototype Constraints (Steps 8–10):</strong> One core capability, one primary integration, 3–5 days max, rough by design, built to validate not to ship. If it takes longer or starts looking polished, scope has drifted. Full constraints in the Prototype Brief Guide.</div>
+    <div class="callout rule"><strong>Feedback Loop:</strong> Every step marked "Yes" in the HTM column activates the 7-step Feedback Loop protocol: Replay → State Updates → State Next Step → Wait for Dan → Capture → Update → Trigger. The CCA never auto-advances past a checkpoint.</div>
   </div>
 
-  <div class="section" id="sample-prototype">
-    <div class="section-header"><h2>Sample Prototype Brief — Cornerstone GC</h2></div>
-    <div class="table-wrap"><table><thead><tr><th>Field</th><th>Content</th></tr></thead><tbody>
-      <tr><td><strong>AITM Name</strong></td><td>Proposal Drafter</td></tr>
-      <tr><td><strong>Customer</strong></td><td>Cornerstone General Contractors</td></tr>
-      <tr><td><strong>Core Skillset Being Tested</strong></td><td>Generate a first-draft construction proposal from Procore project data, comparable past proposals in SharePoint, and Cornerstone's standard template.</td></tr>
-      <tr><td><strong>Key Integration Being Validated</strong></td><td>Read access to Procore project data via REST API (OAuth 2.0). Secondary: semantic search across ~200 past proposals in SharePoint.</td></tr>
-      <tr><td><strong>What the Customer Should React To</strong></td><td>Draft proposal quality — does the narrative match Cornerstone's voice? Comparable proposal selection accuracy. Fee schedule formatting.</td></tr>
-      <tr><td><strong>Context from Discovery</strong></td><td>Cornerstone's preconstruction team currently takes 3–5 business days to produce a proposal. Biggest bottleneck: manual search for comparable past proposals — estimators rely on memory and personal files. Joe Jolley emphasized cover letter tone is critical: "professional, not salesy." Justin McVaney reviews all proposals over $500K and is frequently traveling, adding 1–2 days. Cornerstone uses a consistent Word template with required sections that must not be rearranged.</td></tr>
-      <tr><td><strong>Available Data / Samples</strong></td><td>Three recent winning proposals in DOCX format. Procore sandbox access confirmed. Rate schedule XLSX exported from Sage Intacct.</td></tr>
-      <tr><td><strong>Quality Reference</strong></td><td>2024 Alaska Civil project proposal (Joe identified as "our best recent example"). Template DOCX with required section order.</td></tr>
-      <tr><td><strong>Known Constraints</strong></td><td>Template section order is fixed — agent must not rearrange. Fee schedule must pull from current rate data, not historical.</td></tr>
-      <tr><td><strong>Open Questions</strong></td><td>1. Sage Intacct API access not yet confirmed — using exported XLSX for prototype. 2. Cover letter personalization depth TBD.</td></tr>
-      <tr><td><strong>Reviewer + Timeline</strong></td><td>Joe Jolley. Review session scheduled one week from brief handoff.</td></tr>
-    </tbody></table></div>
+  <div class="section" id="sample-references">
+    <div class="section-header"><h2>Sample Briefs</h2></div>
+    <p>Worked examples of completed deliverables live in their respective guide documents — not in this agent definition. This keeps the CCA Brief focused on the internal AITM specification while the guides show what "done" looks like.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Sample</th><th>Where It Lives</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Sample Requirements Brief</strong></td><td>AITM Requirements Brief Guide v1 — see companion docs</td></tr>
+          <tr><td><strong>Sample Prototype Brief</strong></td><td>Prototype Brief Guide v1 — see companion docs</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- PART 7: CHANGELOG -->
   <div class="part-divider" id="part7">
     <span class="part-num">Part 7</span>
     <h2>Changelog</h2>
-    <span class="part-sub">Dan's original docs → v4.0</span>
+    <span class="part-sub">Running version history</span>
   </div>
 
   <div class="section" id="changelog-v4">
@@ -1555,14 +1824,143 @@
 
     <hr>
     <p style="font-size:12px;color:var(--gray-500);margin-top:1rem">
-      <strong>Summary:</strong> 21 changes documented. Content preserved from 4 original documents (AITM Requirements Brief Guide v1, CCA AITM Requirements Brief v3, Process Map Guide v1, Prototype Brief Guide v1). 0 content removed. All your language, rules, and design principles carried forward — restructured into OS format, refined where noted, extended with new OS-required sections.<br>
-      Prepared by Dave Albertson (CEO), March 2026. Playbook maintained by Dave. Version increments require Dave's approval.
+      <strong>v4.0 Summary:</strong> 21 changes documented. Content preserved from 4 original documents (AITM Requirements Brief Guide v1, CCA AITM Requirements Brief v3, Process Map Guide v1, Prototype Brief Guide v1). All language, rules, and design principles carried forward — restructured into OS format, refined where noted, extended with new OS-required sections. Note: Dan's audit (v5.0) identified 5 content items that were unintentionally dropped during the v4.0 restructure — see v5.0 changelog below for restorations.<br>
+      Prepared by Dave Albertson (CEO), March 2026.
     </p>
+  </div>
+
+  <!-- v5.0 CHANGELOG -->
+  <div class="section" id="changelog-v5">
+    <div class="section-header"><h2>v5.0 — Dan's Audit + Structural Changes</h2></div>
+    <p>Changes from v4.0 → v5.0. Driven by Dan Ray's content audit of v4.0 against his original documents, plus structural decisions by Dave.</p>
+
+    <div class="callout"><strong>Audit source:</strong> Dan reviewed v4.0 against CCA AITM Requirements Brief v3 and identified content that was unintentionally lost during the v4.0 restructure. All restorations pull content from Dan's original docs. Structural changes (merges, renames) are Dave's decisions.</div>
+
+    <h3 style="margin:1.5rem 0 .75rem;color:var(--navy)">Content restored</h3>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Restored</span><span style="font-size:11px;color:var(--gray-600)">Content</span><strong style="font-size:12px">Skillset Detail Blocks — full per-skill definitions with Current Pain, Key Rules, Inputs, Opp Tracker Reference</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Dan's §4 had full per-skill detail blocks with 7 fields each (Description, Trigger, Inputs, Outputs, Current Pain, Key Rules, Opp Tracker Reference) for all 15 skills across 4 Job Areas plus Cross-Cutting. v4.0 flattened these into the 1.3 Skill Inventory summary table — just Skill/Trigger/Output/Priority/Skillset columns. Current Pain, Key Rules, Inputs, and Opp Tracker Reference were lost.</div>
+        <div class="rationale">All 15 skill detail blocks restored into Section 2.1 (Solution Alignment) as "Skill Detail Blocks by Job Area." The 1.3 summary table remains as an index. The detail blocks give Brian's team the full business context — especially Current Pain (why this matters) and Key Rules (operational constraints). All content pulled verbatim from Dan's CCA AITM Requirements Brief v3.</div>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Restored</span><span style="font-size:11px;color:var(--gray-600)">Content</span><strong style="font-size:12px">SE Handoff Input Contract — field-by-field table with "If Missing" consequences</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Dan's §4 (Job Area 1) defined a structured SE Handoff Input Contract: 7 fields (Theme Name, Business Objective, Pain Points, Business Area, 2×2 Scores, Key Stakeholders, Source Context) with explicit "If Missing" consequences per field. v4.0 acknowledged the SE handoff gap existed but didn't reproduce the contract.</div>
+        <div class="rationale">Restored into Section 1.6 (Handoff Contracts) as "SE Handoff Input Contract (Upstream)" — positioned before the existing "Build Team May Ask For" contract. This is precision operational content that defines the CCA's input requirements.</div>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Restored</span><span style="font-size:11px;color:var(--gray-600)">Content</span><strong style="font-size:12px">Appendix B — Resolved Design Decisions (10 items)</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Dan's original had a 10-row Appendix B documenting design questions raised and resolved during Brief creation (Notion Schema, M365 Identity, Architecture, Rebekha Handoff, Proto Handoff Chain, Channel Convention, Priority Score Calibration, Brief Template, Volume, Proposal Ownership). Dropped in v4.0.</div>
+        <div class="rationale">Restored as Addendum after Part 7. Most decisions are already embedded in the spec — the appendix preserves the <em>question</em> so the team knows what was debated. M365 Identity updated to charlie.ai@manageai.io to match current convention. "Medium Term" updated to "Next Build."</div>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Restored</span><span style="font-size:11px;color:var(--gray-600)">Content</span><strong style="font-size:12px">CCA Workflow — 14-step operational table with Skill and HTM columns</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Dan's §6 had a 16-step CCA Workflow table (CCA Action / Skillset / Input / Output / HTM?). v4.0 replaced it with the "Full Process at a Glance" — a higher-level 11-phase view oriented toward customer experience. The per-step Skill mapping and HTM column discipline were lost.</div>
+        <div class="rationale">Restored into Part 6 (Reference) as "CCA Workflow — Step-by-Step." 14 steps (reduced from 16 due to AI Vision Builder merge into Roadmap Builder — see below). Both tables now coexist: Process at a Glance (customer-facing view) and CCA Workflow (internal execution reference).</div>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-new">Restored</span><span style="font-size:11px;color:var(--gray-600)">Content</span><strong style="font-size:12px">Feasibility Question #6 — "Timeline expectation realistic?"</strong></div>
+      <div class="changelog-body">
+        <div class="orig">Dan's original had 6 feasibility questions. v4.0 had 5 different questions — the 6th ("Timeline expectation realistic?") was quietly dropped.</div>
+        <div class="rationale">Restored to Section 3.1 Feasibility Gate. The gate now runs 6 questions. Process at a Glance updated to reflect "six-question" language.</div>
+      </div>
+    </div>
+
+    <h3 style="margin:1.5rem 0 .75rem;color:var(--navy)">Content removed</h3>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Removed</span><span style="font-size:11px;color:var(--gray-600)">Content</span><strong style="font-size:12px">Cornerstone GC sample content removed from Part 6</strong></div>
+      <div class="changelog-body">
+        <div class="orig">v4.0 Part 6 included a fully worked Sample Requirements Brief and Sample Prototype Brief for Cornerstone GC.</div>
+        <div class="rationale">Removed per Dan's audit. The CCA Brief is ManageAI's internal AITM definition — embedding a prospective customer's engagement creates confusion. Sample deliverables belong in their respective guide documents (AITM Requirements Brief Guide, Prototype Brief Guide). Part 6 now references the guides by name.</div>
+      </div>
+    </div>
+
+    <h3 style="margin:1.5rem 0 .75rem;color:var(--navy)">Structural changes</h3>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">AI Vision Builder merged into AI Workforce Roadmap Builder</strong></div>
+      <div class="changelog-body">
+        <div class="orig">v4.0 had two separate skills: Opp Roadmap Builder (phased roadmap) and AI Workforce Vision Builder (3-horizon executive narrative). Dan's original also had these as separate detail blocks (Opportunity Roadmap Builder + AI Vision Builder).</div>
+        <div class="rationale">Merged into a single skill: <strong>AI Workforce Roadmap Builder</strong>. The Roadmap and Vision are two outputs of the same skill — the Roadmap sequences what we work on; the Vision communicates that sequence as a narrative. Three phases: <strong>Now / Next / Later</strong> (internal) = <strong>Phase 1 / Phase 2 / Phase 3</strong> (customer-facing, how Dan communicates). The "Short Term / Medium Term / Long Term" language is retired. Skill fires at Steps 3, 7, and 12 in the CCA Workflow.</div>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Naming</span><strong style="font-size:12px">Scope Freeze Check → Requirements Scope Freeze</strong></div>
+      <div class="changelog-body">
+        <div class="orig">v4.0 called this skill "Scope Freeze Check" in the 1.3 Skill Inventory table.</div>
+        <div class="rationale">Renamed to <strong>Requirements Scope Freeze</strong> for clarity. Kept as a separate skill from Confidence Scoring — it's the final hard gate, not just another scoring pass.</div>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">AITM Owner → Manager</strong></div>
+      <div class="changelog-body">
+        <div class="orig">v4.0 used "AITM Owner" to describe the human who manages an AI Teammate's performance and governance.</div>
+        <div class="rationale">Renamed to <strong>Manager</strong>. Simpler, clearer, and consistent with the workforce model — you manage AI, not "own" it. The human responsible for an AI Teammate is their Manager, same as any other team member.</div>
+      </div>
+    </div>
+
+    <div class="changelog-entry">
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Structure</span><strong style="font-size:12px">Preamble → Operating Context</strong></div>
+      <div class="changelog-body">
+        <div class="orig">v4.0 had a "Preamble" section with Core Definitions and a Role Guide. Company vision and AI strategy content from Dan's original §1 was not represented — it was dropped during the v4.0 restructure.</div>
+        <div class="rationale">Restructured into <strong>Operating Context</strong> with three sections: (1) Company Strategy — links to the OS at os.manageai.io as the single source of truth for company vision, team structure, and operating model. References OS sections by name (Operating Model, Operating Map, Workflow Map, Agent Template, Directory). (2) OS Vocabulary — the structural definitions (Business Objective → Responsibility → Skillset → Skill → Training), unchanged but reframed as OS-level vocabulary that applies to all agents. (3) Role Guide — unchanged. This pattern keeps the OS as the source of truth for company-level content while each agent definition states where it fits in the strategy.</div>
+      </div>
+    </div>
+
+    <hr>
+    <p style="font-size:12px;color:var(--gray-500);margin-top:1rem">
+      <strong>v5.0 Summary:</strong> 5 content restorations from Dan's original docs. 1 content removal (Cornerstone samples). 4 structural/naming changes (AI Vision Builder merge, Scope Freeze rename, AITM Owner → Manager, Preamble → Operating Context with OS linkage). Net skill count in 1.3 table: reduced by 1 (two skills merged into AI Workforce Roadmap Builder). CCA Workflow reduced from 16 to 14 steps due to merge. All original Dan content now fully accounted for.<br>
+      Prepared by Dave Albertson (CEO), March 2026. Changelog is cumulative — future versions append below.
+    </p>
+  </div>
+
+  <!-- ADDENDUM -->
+  <div class="part-divider" id="addendum">
+    <span class="part-num">Addendum</span>
+    <h2>Resolved Design Decisions</h2>
+    <span class="part-sub">Decision log from Brief creation</span>
+  </div>
+
+  <div class="section" id="design-decisions">
+    <div class="section-header"><h2>Appendix B — Resolved Design Decisions</h2></div>
+    <p>Reference table of design questions raised and resolved during Brief creation. These decisions are embedded in the spec itself — this log preserves the <em>question</em> so the team knows what was debated and why the call was made.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th style="width:40px">#</th><th style="width:180px">Question</th><th>Resolution</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>Notion Schema</strong></td><td>Opportunity Tracker created (bfeccfab). Tracks Themes + Opportunities. Related to Client AITM Onboarding. 4 views.</td></tr>
+          <tr><td>2</td><td><strong>M365 Identity</strong></td><td>charlie.ai@manageai.io. Permissioned like teammate. Dan provisions; Jacob handles app registration.</td></tr>
+          <tr><td>3</td><td><strong>Architecture</strong></td><td>Single CCA, 16 Skillsets. Multi-agent deferred to Next Build.</td></tr>
+          <tr><td>4</td><td><strong>Rebekha Handoff</strong></td><td>Notion records in Opportunity Tracker. Rebekha's OA Skillset is Phase 2. Manual until then.</td></tr>
+          <tr><td>5</td><td><strong>Proto Handoff Chain</strong></td><td>CCA → Customer Channel → Dan reviews → Dan forwards to Brian.</td></tr>
+          <tr><td>6</td><td><strong>Channel Convention</strong></td><td>One Teams channel per customer under Manage Partners. Named by customer name.</td></tr>
+          <tr><td>7</td><td><strong>Priority Score Calibration</strong></td><td>Start with defaults. Calibrate after 3–4 customers.</td></tr>
+          <tr><td>8</td><td><strong>Brief Template</strong></td><td>7-section AITM Requirements Brief per Guide. Stored /Company/Templates/.</td></tr>
+          <tr><td>9</td><td><strong>Volume</strong></td><td>4–6 customers, ramping to 6–8 calls/week. Long-term scale not constrained.</td></tr>
+          <tr><td>10</td><td><strong>Proposal Ownership</strong></td><td>CCA feeds (Roadmap + Vision + Brief). Sales Agent owns proposal.</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="doc-footer">
     © 2026 Manage AI. All rights reserved. Confidential. Internal use only.<br>
-    Chief Customer Agent · Complete Agent Definition · v4.0 · March 2026
+    Chief Customer Agent · Complete Agent Definition · v5.0 · March 2026
   </div>
 
 </main>
