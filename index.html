@@ -365,7 +365,7 @@
         <thead><tr><th>Role</th><th>Responsibilities in This Document</th><th>Start Here</th></tr></thead>
         <tbody>
           <tr><td><strong>Dan (Customer Lead)</strong></td><td>Runs alignment sessions. Reviews all CCA outputs. Confirms Prototype Readiness before handoff. Gets workflow owner sign-off before Scope Freeze.</td><td>Part 1 Charter → Part 3 Playbook</td></tr>
-          <tr><td><strong>Brian (Build team)</strong></td><td>Receives Prototype Brief and AITM Requirements Brief. Creates the Skillset Training Guide. Never asks for anything on the "Must Never Ask For" list.</td><td>Part 1.6 Handoff Contracts → Part 3.4 Output Templates</td></tr>
+          <tr><td><strong>Brian (Build team)</strong></td><td>Receives Prototype Brief and AITM Requirements Brief. Produces 5 build artifacts: Solution Prototype, AI Teammate Training Manual, AI Teammate Deployment Package, Regression Suite, Deployment Summary. Never asks for anything on the "Must Never Ask For" list.</td><td>Part 1.6 Handoff Contracts → Part 3.4 Output Templates</td></tr>
           <tr><td><strong>CCA</strong></td><td>Runs the full Solution Alignment process. Maintains Customer Dossier. Flags gaps. Logs improvement signals.</td><td>All parts</td></tr>
           <tr><td><strong>Dave (SE)</strong></td><td>Runs Opportunity Assessment. Hands off prioritized Themes to CCA. Approves playbook changes.</td><td>Part 2 Skillsets → Part 7 Changelog</td></tr>
           <tr><td><strong>Jacob (Architecture team)</strong></td><td>Receives technical readiness context. Handles infra tier, API auth, deployment pipeline. May ask for items on the "May Ask For" list.</td><td>Part 1.6 Handoff Contracts → Part 5 Infra Template</td></tr>
@@ -582,6 +582,33 @@
     <div class="callout rule">
       <strong>Enforcement:</strong> If Brian or Jacob loops back to Dan or the customer for "Must Never Ask For" information, scope reopens, the gap gets filled, and Scope Freeze re-runs before build resumes. Non-negotiable.
     </div>
+
+    <h4>Build → CCA Handoff (H7: Deployment Summary)</h4>
+    <p>After build completes, the Build team sends a <strong>Deployment Summary</strong> back to the CCA. This is the loop-back artifact — it documents the delta between the Brief and what was actually deployed.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Section</th><th>Content</th><th>What CCA Does With It</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Scope Confirmation</strong></td><td>Which Brief sections were implemented</td><td>Verifies Brief was built correctly</td></tr>
+          <tr><td><strong>Build Delta</strong></td><td>Every deviation from Brief with rationale</td><td>Appends to Brief as build annotations</td></tr>
+          <tr><td><strong>Deferrals</strong></td><td>What's queued for next wave — Brief ref, reason, recommendation</td><td>Updates Outcome Roadmap</td></tr>
+          <tr><td><strong>Gaps Discovered</strong></td><td>Gaps found during build — what, how resolved, who</td><td>Adds to Customer Dossier</td></tr>
+          <tr><td><strong>Measured Values</strong></td><td>Actual token usage, latency, cost per execution</td><td>Replaces Brief §7 estimates with actuals</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Build → Customer Handoff (H8: Training Manual + Deployment Package)</h4>
+    <p>The customer receives two permanent assets that fulfill the deploy-and-own promise:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Artifact</th><th>Purpose</th><th>Must Never Ask For</th></tr></thead>
+        <tbody>
+          <tr><td><strong>AI Teammate Training Manual</strong></td><td>Human-readable — how to understand, use, and operate the AI Teammate</td><td rowspan="2">How to use, configure, maintain, and rebuild the AI Teammate</td></tr>
+          <tr><td><strong>AI Teammate Deployment Package</strong></td><td>Machine-readable — everything needed to rebuild and redeploy</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- 1.7 LEARNING LOOP -->
@@ -704,7 +731,7 @@
               <tr><td><strong>Approval Requirements</strong></td><td>Prototype Brief: Dan reviews before Brian receives. Scope Freeze: Dan confirms before Engineering Handoff. Playbook changes: Dave + Dan approve.</td></tr>
               <tr><td><strong>Guardrail Category</strong></td><td>Business rule + confidence threshold. Scope Freeze is a hard confidence gate — all sections must be "Complete" before handoff. No exceptions.</td></tr>
               <tr><td><strong>Playbook Reference</strong></td><td>Part 3 of this document — Solution Alignment Playbook (3.1–3.8)</td></tr>
-              <tr><td><strong>Dependencies</strong></td><td>Upstream: SE Opportunity Assessment (Rebekha/Dave). Downstream: Build team (Brian) for Skillset Training Guide, Architecture team (Jacob) for infra decisions.</td></tr>
+              <tr><td><strong>Dependencies</strong></td><td>Upstream: SE Opportunity Assessment (Rebekha/Dave). Downstream: Build team (Brian) for AI Teammate Training Manual + Deployment Package, Architecture team (Jacob) for infra decisions.</td></tr>
               <tr><td><strong>Scope Boundary</strong></td><td><strong>Begins:</strong> SE completes Opportunity Assessment, hands off prioritized Themes to CCA. <strong>Ends:</strong> Requirements-complete AITM Requirements Brief passes Business Requirements Scope Freeze → Engineering Handoff to Brian. <strong>Out of scope:</strong> Opportunity Assessment (Rebekha/SE), engineering build (Brian), post-deployment monitoring (Responsibility 4 — future build).</td></tr>
             </tbody>
           </table>
@@ -1059,7 +1086,7 @@
         </table>
       </div>
       <div class="callout rule"><strong>Gate Rule:</strong> If any question is a clear "no," don't start Alignment. Deprioritize, resolve the blocker, or replace with the next roadmap item.</div>
-      <div class="callout warning"><strong>Open gap:</strong> The Opportunity Assessment Guide — defining how the SE runs discovery, scores Themes, and hands off to the CCA — has not yet been created. Until it exists, SE handoff quality will vary. Priority: create alongside the Skillset Training Guide.</div>
+      <div class="callout warning"><strong>Open gap:</strong> The Opportunity Assessment Guide — defining how the SE runs discovery, scores Themes, and hands off to the CCA — has not yet been created. Until it exists, SE handoff quality will vary. Priority: create alongside the AI Teammate Training Manual.</div>
     </div>
   </div>
 
@@ -1093,7 +1120,7 @@
       <div class="stage-block">
         <div class="stage-header"><span class="stage-num">Stage 4</span><h3>Scope Completion & Handoff</h3></div>
         <div class="stage-body">
-          <p><strong>Owner:</strong> CCA (Brief), Dan (review), Brian (Skillset Training Guide), Jacob (infrastructure)</p>
+          <p><strong>Owner:</strong> CCA (Brief), Dan (review), Brian (AI Teammate Training Manual + Deployment Package), Jacob (infrastructure)</p>
           <p><strong>Output:</strong> AITM Requirements Brief (all 7 sections Complete) + Build Handoff Contract</p>
           <div class="callout rule"><strong>Scope Freeze Rule:</strong> Scope freezes when workflow steps, Skillsets, and acceptance criteria are all fully defined. Anything after freeze is the next build, not a reason to delay this one.</div>
         </div>
@@ -1239,22 +1266,35 @@
 
     <div class="subsection">
       <h3>AITM Requirements Brief — 7 Sections</h3>
-      <p>The primary deliverable of Solution Alignment. The CCA produces this progressively through the Alignment Loop. Written in natural language — the way you'd brief a new employee. Brian's team interprets it into the Skillset Training Guide.</p>
-      <div class="callout"><strong>Separation of concerns:</strong> The Brief defines the WHAT and WHY. Brian's team creates the Skillset Training Guide (the HOW). Brief is readable by Dan, customers, and Sales — not just Brian.</div>
+      <p>The primary deliverable of Solution Alignment. The CCA produces this progressively through the Alignment Loop. Written in natural language — the way you'd brief a new employee. Brian's team interprets it into the AI Teammate Training Manual and AI Teammate Deployment Package.</p>
+      <div class="callout"><strong>Separation of concerns:</strong> The Brief defines the WHAT and WHY. Brian's team produces the build artifacts (the HOW) — AI Teammate Training Manual (3-part: Overview, Manage AI Team Builder™, Manage AI Workplace™) and AI Teammate Deployment Package (9 subpackages). Brief is readable by Dan, customers, and Sales — not just Brian.</div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 1</span><span class="name">AI Workforce Vision</span><span class="os-tag">OS: Operating Model</span></div><div class="brief-section-body"><strong>WHY — strategy, Now/Next/Later roadmap</strong><br>Company context, key stakeholders, and the three-bucket AI workforce strategy. No dates or timelines. An executive should read this section alone and understand where the engagement is going.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 2</span><span class="name">Role & Responsibilities</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>WHO — the AI Teammate, Manager, Remote governance</strong><br>AITM identity, role description, and Responsibilities table. Required fields: AITM Name, Assigned Skillset, Manager (named human), M365/System Identity, and Remote governance plan per Responsibility. Remote governance plan is a required field — not optional.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 3</span><span class="name">Current Reality & Process</span><span class="os-tag">OS: Workflow Map</span></div><div class="brief-section-body"><strong>TODAY — how work gets done now, pain points, volume</strong><br>Job Area summary table from the MAI Process Map. Step-by-step current-state process with: what happens, who does it, systems used, pain points. Triggers, volume, and current cycle time. Links to the full MAI Process Map artifact.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 4</span><span class="name">[Name]'s Workflow</span><span class="os-tag">OS: Workflow Map</span></div><div class="brief-section-body"><strong>TOMORROW — how the AI Teammate changes the work</strong><br>Step-by-step future-state workflow: what the Teammate does at each step, Skillset reference, inputs, outputs, human-in-the-loop flags, and edge cases.</div></div>
-      <div class="brief-section"><div class="brief-section-header"><span class="num">Section 5</span><span class="name">What [Name] Does</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>HOW — Skillsets, Skills, rules, decision authority, guardrails</strong><br>Recommended Skillset Map (directional — Brian finalizes boundaries in the Training Guide). Behavioral rules. Decision Authority table: autonomous decisions, escalation paths, response SLAs. What the Teammate must never do.</div></div>
+      <div class="brief-section"><div class="brief-section-header"><span class="num">Section 5</span><span class="name">What [Name] Does</span><span class="os-tag">OS: Agent Template</span></div><div class="brief-section-body"><strong>HOW — Skillsets, Skills, rules, decision authority, guardrails</strong><br>Recommended Skillset Map (directional — Brian finalizes boundaries in the AI Teammate Training Manual). Behavioral rules. Decision Authority table: autonomous decisions, escalation paths, response SLAs. What the Teammate must never do.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 6</span><span class="name">Knowledge & Systems</span><span class="os-tag">OS: Infra Template</span></div><div class="brief-section-body"><strong>WITH WHAT — all systems, data, integrations, access, compliance</strong><br>Data sources and reference material. System integrations (what the Teammate needs, read/write, how it connects). AITM identity and access configuration. Data sensitivity, compliance requirements, PII, data residency.</div></div>
       <div class="brief-section"><div class="brief-section-header"><span class="num">Section 7</span><span class="name">How We Know It's Working</span><span class="os-tag">OS: Operating Model</span></div><div class="brief-section-body"><strong>PROOF — success metrics, acceptance criteria, test cases, post-launch plan</strong><br>Specific measurable success metrics tied to the AI Workforce Vision. Acceptance criteria for launch. Post-launch monitoring plan, review cadence, and first optimization target.</div></div>
     </div>
 
     <div class="subsection">
-      <h3>Skillset Training Guide</h3>
-      <p>Brian's artifact — created by the Build team from the AITM Requirements Brief. Defines the HOW: system prompt architecture, tool configuration, workflow logic, and test suite. The engineering translation layer between business requirements (Brief) and the actual build.</p>
-      <p>For new engagements: Brief → Skillset Training Guide → customer proposal → customer signs → build begins.</p>
-      <div class="callout warning"><strong>Open gap:</strong> The Skillset Training Guide needs its own guide document — defining standards, structure, and content requirements. Same treatment as the Process Map Guide and Prototype Brief Guide. Without it, Brian has no standard for what the Training Guide should contain.</div>
+      <h3>Build Artifacts — 5 Standard Outputs</h3>
+      <p>Every agent deployment produces exactly 5 artifacts. These are the standard outputs of the Manage AI Team Builder™ and Manage AI Workplace™ build pipeline.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Artifact</th><th>Format</th><th>Audience</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>Solution Prototype</strong></td><td>HTML</td><td>Customer (via Dan)</td><td>Pre-build. Interactive prototype — requirements discovery, feasibility validation, wow moment.</td></tr>
+            <tr><td>2</td><td><strong>AI Teammate Training Manual</strong></td><td>HTML</td><td>Customer — permanent asset</td><td>3-part human-readable guide: Part 1 Overview, Part 2 Manage AI Team Builder™, Part 3 Manage AI Workplace™.</td></tr>
+            <tr><td>3</td><td><strong>AI Teammate Deployment Package</strong></td><td>JSON (directory)</td><td>Build, QA, Security, Infra, Customer</td><td>Machine-readable single source of truth. 9 subpackages + package.json. Deploy-and-own asset.</td></tr>
+            <tr><td>4</td><td><strong>Regression Suite</strong></td><td>JSON</td><td>QA (QA-001)</td><td>Test manifest — acceptance criteria, gold standards, smoke tests, component validation.</td></tr>
+            <tr><td>5</td><td><strong>Deployment Summary</strong></td><td>Markdown</td><td>CCA (Charlie), Brian</td><td>Loop-back — scope confirmation, build delta, deferrals, gaps, measured values.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout rule"><strong>Exactly 5 artifacts, or the build failed.</strong> Partial output is not a delivery.</div>
+      <h4>Brief Loop-Back</h4>
+      <p>The AITM Requirements Brief is the single source of truth for scope. Build does NOT produce a parallel scope document. Instead, Build sends a <strong>Deployment Summary</strong> (Handoff H7) back to the CCA documenting: what was built, what changed from the Brief, what was deferred, and measured performance values. The CCA annotates the Brief, updates the Outcome Roadmap with deferrals, and updates the Customer Dossier with discovered gaps. The Brief remains the ONE scope document throughout.</p>
     </div>
   </div>
 
@@ -1500,7 +1540,7 @@
           <tr><td><strong>Confirm</strong></td><td>Dan + workflow owner</td><td>10-min checkpoint: process map, decisions, escalation paths validated.</td><td>Heard and confident</td><td>Stakeholder sign-off</td></tr>
           <tr><td><strong>Scope Freeze</strong></td><td>CCA</td><td>All 7 Brief sections Complete. Section-by-section completeness audit.</td><td>Knows what's being built</td><td>Complete AITM Requirements Brief</td></tr>
           <tr><td><strong>Engineering Handoff</strong></td><td>Dan → Brian + Jacob</td><td>Brief + Process Map + tech readiness to Build and Architecture teams.</td><td>Informed, knows timeline</td><td>Requirements Brief + tech context → build</td></tr>
-          <tr><td><strong>Skillset Training Guide</strong></td><td>Brian</td><td>Build team translates Brief into the HOW — system prompt, tools, workflows, test suite.</td><td>Sees proposal, signs, build begins</td><td>Skillset Training Guide → proposal → signed → build</td></tr>
+          <tr><td><strong>Build Artifacts</strong></td><td>Brian</td><td>Build team produces 5 artifacts: Solution Prototype, AI Teammate Training Manual, Deployment Package, Regression Suite, Deployment Summary.</td><td>Sees proposal, signs, build begins</td><td>5 build artifacts → proposal → signed → build</td></tr>
         </tbody>
       </table>
     </div>
@@ -1623,10 +1663,10 @@
     </div>
 
     <div class="changelog-entry">
-      <div class="changelog-header"><span class="badge badge-new">Preserved</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">AITM Requirements Brief (WHAT) + Skillset Training Guide (HOW) split — kept as written</strong></div>
+      <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">Skillset Training Guide → 5 Build Artifacts (AI Teammate Training Manual, Deployment Package, etc.)</strong></div>
       <div class="changelog-body">
         <div class="orig">Your AITM Requirements Brief Guide defined the Brief as capturing the WHAT and WHY (business requirements), with Brian's engineering team creating the Skillset Training Guide (the HOW) separately.</div>
-        <div class="rationale">This separation is the right architectural decision and is preserved exactly as you defined it. The Brief remains the business requirements document readable by Dan, customers, and Sales. Brian's Skillset Training Guide is the engineering translation layer. One open gap noted: the Skillset Training Guide still needs its own guide document — same treatment as your Process Map Guide and Prototype Brief Guide.</div>
+        <div class="rationale">The separation of WHAT (Brief) vs HOW (Build) is preserved. The single "Skillset Training Guide" is now replaced by the 5-artifact build standard: Solution Prototype, AI Teammate Training Manual (3-part: Overview, Manage AI Team Builder™, Manage AI Workplace™), AI Teammate Deployment Package (9 subpackages + package.json), Regression Suite, and Deployment Summary. New handoffs added: H7 (Build → CCA, Deployment Summary loop-back) and H8 (Build → Customer, Training Manual + Deployment Package). The Brief remains the single source of truth — Build sends delta back via Deployment Summary, not a parallel scope doc.</div>
       </div>
     </div>
 
@@ -1642,7 +1682,7 @@
       <div class="changelog-header"><span class="badge badge-mod">Modified</span><span style="font-size:11px;color:var(--gray-600)">Terminology</span><strong style="font-size:12px">Team naming — aligned to OS as master reference</strong></div>
       <div class="changelog-body">
         <div class="orig">Your docs used "Brian's engineering team" and "engineering team" to reference the build function.</div>
-        <div class="rationale">"Engineering team" is replaced throughout with the correct OS role references: Build team (Brian) and Architecture team (Jacob). The OS is the master source of truth for all team names and definitions — as the OS evolves, this document follows. This also makes handoffs more precise: Brian receives the Brief and produces the Skillset Training Guide; Jacob handles infrastructure, API authentication, and deployment.</div>
+        <div class="rationale">"Engineering team" is replaced throughout with the correct OS role references: Build team (Brian) and Architecture team (Jacob). The OS is the master source of truth for all team names and definitions — as the OS evolves, this document follows. This also makes handoffs more precise: Brian receives the Brief and produces the 5 build artifacts (AI Teammate Training Manual, Deployment Package, etc.); Jacob handles infrastructure, API authentication, and deployment.</div>
       </div>
     </div>
 
@@ -1803,7 +1843,7 @@
     <div class="changelog-entry">
       <div class="changelog-header"><span class="badge badge-new">Added</span><span style="font-size:11px;color:var(--gray-600)">New content</span><strong style="font-size:12px">Open gaps flagged — two guides still needed</strong></div>
       <div class="changelog-body">
-        <div class="rationale">Two guide documents are called out as open gaps with warning callouts: (1) Opportunity Assessment Guide — defining how the SE runs discovery, scores Themes, and hands off to the CCA. Not yet created. Until it exists, SE handoff quality will vary. (2) Skillset Training Guide guide — defining standards, structure, and content requirements for Brian's HOW artifact. Not yet created. Without it, Brian has no standard for what the Training Guide should contain. Both are flagged as Priority: create alongside each other.</div>
+        <div class="rationale">Two guide documents are called out as open gaps with warning callouts: (1) Opportunity Assessment Guide — defining how the SE runs discovery, scores Themes, and hands off to the CCA. Not yet created. Until it exists, SE handoff quality will vary. (2) AI Teammate Training Manual standards — defining structure and content requirements for Brian's build artifacts. Now addressed by the 5-artifact build standard and the Build Artifact Reference Map v3. Both are flagged as Priority: create alongside each other.</div>
       </div>
     </div>
 
